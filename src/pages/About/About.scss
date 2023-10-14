@@ -1,0 +1,212 @@
+.about-page {
+  /* Baner Section */
+
+  #banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 70px 0;
+    background: black;
+    color: white;
+    background-position: 50% 50%;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 9.063rem;
+    .container {
+      width: 80%;
+      .section-content {
+        width: 51%;
+        .back-btn {
+          margin-bottom: 26px;
+          display: inline-flex;
+          align-items: center;
+          font-size: 13px;
+          font-family: Outfit, sans-serif;
+          font-weight: 500;
+          cursor: pointer;
+          .icon-back {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            vertical-align: middle;
+            border: 1px solid;
+            border-radius: 100%;
+            text-align: center;
+            padding: 4px 0;
+            margin-right: 10px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .section-title {
+          margin-bottom: 12px;
+          h2 {
+            background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-family: Outfit, sans-serif;
+            font-size: 35px;
+            display: inline-block;
+          }
+        }
+        .about-text {
+          font-size: 13px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+  }
+  /* About Game Section */
+
+  #about-game {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0px;
+    .container {
+      width: 80%;
+      .section-title {
+        margin-bottom: 40px;
+        h2 {
+          font-family: Outfit, sans-serif;
+          font-weight: 500;
+          font-size: 30px;
+          color: #838383;
+        }
+      }
+      .section-bottom {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+        .bottom-element {
+          p {
+            font-family: Outfit, sans-serif;
+            color: #838383;
+            width: 570px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  /* Gaming Adventures */
+
+  #gaming-adventures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 70px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        h2 {
+          color: #838383;
+          font-size: 35px;
+          font-weight: 500;
+          font-family: Outfit, sans-serif;
+        }
+      }
+      .section-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 35px;
+        .information {
+          padding: 0 20px;
+          .section-title {
+            text-align: start;
+            margin-bottom: 40px;
+            h3 {
+              font-family: Outfit, sans-serif;
+              color: #838383;
+              font-size: 24px;
+            }
+          }
+          p {
+            font-family: Outfit, sans-serif;
+            // font-weight: 400;
+            font-size: 14px;
+            color: #838383;
+            margin-bottom: 15px;
+          }
+        }
+        .image {
+          img {
+          }
+        }
+      }
+    }
+  }
+  /* About Our Services */
+
+  #about-services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+    width: 100%;
+    .container {
+      width: 80%;
+      .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 50px;
+        text-align: center;
+        h2 {
+          font-family: Outfit, sans-serif;
+          font-size: 38px;
+          color: #838383;
+        }
+        p {
+          margin-top: 24px;
+          font-size: 14px;
+          width: 900px;
+          color: #838383;
+        }
+      }
+      .section-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .about-us-boxs {
+          margin: 0 15px;
+          padding: 25px 18px;
+          border: 1px solid #0098ff;
+          position: relative;
+          img {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+          }
+          h3 {
+            font-family: Outfit, sans-serif;
+            font-size: 25px;
+            color: #838383;
+            margin-bottom: 15px;
+          }
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: Outfit, sans-serif;
+            color: #838383;
+          }
+        }
+      }
+    }
+  }
+}

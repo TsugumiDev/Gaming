@@ -1,0 +1,1045 @@
+$first-color: #fff;
+$second-color: #838383;
+$third-color: #0098ff;
+$fourth-color: #7b35c8;
+@mixin text-style {
+  background: linear-gradient(75deg, $third-color 0%, $fourth-color 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  display: inline-block;
+}
+@mixin product-card-inner {
+  .product-card-inner {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      border-radius: 0 12px;
+      border: 1px solid transparent;
+      background: linear-gradient(to left, $third-color 50%, $fourth-color)
+        border-box;
+      -webkit-mask: linear-gradient($first-color 0 0) padding-box,
+        linear-gradient($first-color 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    position: relative;
+    background: linear-gradient(
+      148deg,
+      rgba(1, 152, 255, 0.18) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    width: 100%;
+    border-radius: 0 12px;
+
+    padding: 15px 30px;
+    .product-title {
+      max-width: 210px;
+      margin-bottom: 15px;
+    }
+    .card-info {
+      p {
+        width: 270px;
+        margin: 15px 0;
+        color: $second-color;
+        font-family: Outfit, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+    .select-addtocart {
+      .top {
+        .text-small {
+          margin-bottom: 10px;
+          font-size: 12px;
+          font-family: Outfit, sans-serif;
+          color: $first-color;
+          font-weight: 600;
+        }
+        select {
+          margin-top: 10px;
+          border: solid 1px $second-color;
+          color: $second-color;
+          cursor: pointer;
+          display: block;
+          font-family: inherit;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1;
+          outline: none;
+          position: relative;
+          text-align: left;
+          transition: all 0.2s ease-in-out;
+          user-select: none;
+          padding: 10px 35px 10px 15px;
+          width: 100%;
+          -webkit-appearance: none;
+          background: url("/../public/images/dropdown.png") no-repeat;
+          background-size: 14px;
+          background-position: calc(100% - 15px) 50%;
+          border-radius: 0 10px;
+        }
+      }
+      .product-content-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        .content-left {
+          display: inline-flex;
+          font-weight: 600;
+          font-family: Outfit, sans-serif;
+          color: $first-color;
+          .price {
+            font-size: 25px;
+            font-weight: 500;
+          }
+          .unit {
+            font-size: 14px;
+          }
+        }
+        .content-right {
+          .product-from {
+            transition: all ease-in-out 0.3s;
+            text-align: center;
+            color: $first-color;
+            background: linear-gradient(
+              75deg,
+              $third-color 0%,
+              $fourth-color 100%
+            );
+            border-radius: 0 20px;
+            padding: 12px 40px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid transparent;
+            justify-content: center;
+            -webkit-appearance: none;
+            appearance: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-page {
+  // Shopify
+  #shopify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 210px 0 60px;
+    .circle-2 {
+      position: absolute;
+      z-index: -1;
+      top: 0%;
+      right: 0;
+    }
+    .circle-1 {
+      position: absolute;
+      z-index: -1;
+      top: 0%;
+      left: 12%;
+    }
+    .games-img {
+      position: absolute;
+      z-index: -1;
+      top: 62%;
+      left: 90px;
+    }
+    .bluthoot-left {
+      top: 0;
+      left: 0%;
+      max-width: 500px;
+      position: absolute;
+      z-index: -1;
+    }
+    .bluthoot-right {
+      top: -8%;
+      right: 17%;
+      max-width: 500px;
+      position: absolute;
+      z-index: -1;
+    }
+    .round-big {
+      position: absolute;
+      z-index: -1;
+      top: 34%;
+      right: 50%;
+    }
+    .round-small {
+      position: absolute;
+      z-index: -1;
+      bottom: 25%;
+      right: 46%;
+    }
+    .full-bluthoot {
+      top: 50%;
+      right: 21%;
+      position: absolute;
+      z-index: -1;
+    }
+    .top-start {
+      top: 27%;
+      right: 20%;
+      position: absolute;
+      z-index: -1;
+    }
+    .container {
+      width: 85%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -15px;
+      margin-right: -15px;
+      .shopify-elements {
+        padding: 0 15px;
+        .banner-tagline {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #12103e;
+          padding: 10px 15px;
+          color: $first-color;
+          max-width: 400px;
+          margin-bottom: 20px;
+          border-radius: 30px;
+
+          .btn-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px;
+            color: $first-color;
+            margin-right: 10px;
+            background: linear-gradient(
+              90deg,
+              $third-color 0%,
+              rgba(0, 152, 255, 0) 100%
+            );
+            border-radius: 20px;
+            font-size: 14px;
+          }
+          .label {
+            font-size: 13px;
+            a {
+              color: #1c82f3;
+            }
+          }
+        }
+        .section-title {
+          margin-bottom: 25px;
+          .text {
+            width: 570px;
+            font-size: 65px;
+            font-weight: 600;
+            line-height: 60.07px;
+            color: $first-color;
+            margin-bottom: 20px;
+            b {
+              @include text-style;
+            }
+          }
+          p {
+            max-width: 475px;
+            color: $second-color;
+          }
+        }
+        .show-btns {
+          margin-top: 20px;
+          .btn-products {
+            &:hover {
+              background: transparent;
+              color: $second-color;
+              border: 1px solid $second-color;
+            }
+            text-align: center;
+            color: $first-color;
+            background: linear-gradient(
+              75deg,
+              $third-color 0%,
+              $fourth-color 100%
+            );
+            margin-right: 14px;
+            padding: 12px 40px;
+            border-radius: 0px 20px 0px 20px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            font-size: 14px;
+            transition: all ease-in-out 0.3s;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid transparent;
+            justify-content: center;
+            span {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // About-Our-Shop
+  #about-our-shop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 70px;
+    .about-image-small {
+      position: absolute;
+      z-index: -1;
+      bottom: 8%;
+      left: 4%;
+    }
+    .container {
+      width: 80%;
+      .about-title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+        margin-bottom: 40px;
+
+        h2 {
+          color: black;
+          margin-bottom: 10px;
+        }
+        .about-text {
+          font-size: 14px;
+          color: $second-color;
+        }
+      }
+      .about-elements {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        .about-us-box {
+          width: 270px;
+          padding: 0 15px;
+          position: relative;
+          z-index: 1;
+          padding: 25px 15px;
+          &::before {
+            border: 1px solid $fourth-color;
+            background: linear-gradient(
+              148deg,
+              rgba(1, 152, 255, 0.18) 0%,
+              rgba(0, 0, 0, 0) 100%
+            );
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0 15px;
+          }
+          .h2-title {
+            @include text-style;
+            font-size: 35px;
+            font-family: Outfit, sans-serif;
+            margin-bottom: 10px;
+          }
+          .h3-title {
+            font-family: Outfit, sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            color: black;
+            margin-bottom: 10px;
+          }
+          p {
+            width: 175px;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+              sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+
+  // Products
+  #products {
+    background: rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    .product-circle {
+      top: -8%;
+      left: 24%;
+      z-index: -1;
+      position: absolute;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .product-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin-bottom: 40px;
+
+        h2 {
+          color: $first-color;
+          font-family: Outfit, sans-serif;
+          font-size: 38px;
+          font-weight: 500;
+        }
+        .btn {
+          background: transparent;
+          color: $second-color;
+          border: 1px solid $second-color;
+          transition: all ease-in-out 0.3s;
+          text-align: center;
+          padding: 12px 40px;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          appearance: none;
+          font-size: 14px;
+          border-radius: 0 20px;
+          span {
+            margin-right: 10px;
+          }
+        }
+      }
+      .product-swiper {
+        .products {
+          width: 100%;
+          .mySwiper {
+            width: 80vw;
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 100% !important;
+                display: flex;
+                gap: 30px;
+              }
+            }
+            .swiper-pagination {
+              --swiper-pagination-bottom: -5px;
+              .swiper-pagination-bullet {
+                background: linear-gradient(
+                  75deg,
+                  $third-color 0%,
+                  $fourth-color 100%
+                );
+                width: 30px;
+                height: 2px;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Client Logo Section
+
+  #client-logo {
+    background: rgba(0, 0, 0, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 70px 0px;
+    .container {
+      width: 80%;
+      .swiper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .swiper-pagination {
+          display: none;
+        }
+        .swiper-button-next {
+          &::after {
+            --swiper-navigation-size: 24px;
+          }
+        }
+        .swiper-button-prev {
+          &::after {
+            --swiper-navigation-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  // Gaming Categories
+
+  #gaming-categories {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, transparent 66%, rgba(0, 0, 0, 1) 15%);
+    position: relative;
+    .gaming-circle {
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+    .gaming-console {
+      top: 26%;
+      right: 1%;
+      z-index: 1;
+      position: absolute;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 3.125rem;
+      .left {
+        padding: 0 15px;
+        .gaming-leftbar {
+          width: 250px;
+          .section-title {
+            margin-bottom: 60px;
+            color: $first-color;
+            h2 {
+              max-width: 270px;
+              font-family: Outfit, sans-serif;
+              font-weight: 500;
+              font-size: 38px;
+              b {
+                @include text-style;
+              }
+            }
+          }
+          .tab {
+            display: flex;
+            flex-direction: column;
+
+            li {
+              font-family: Outfit, sans-serif;
+              width: 250px;
+              height: 39px;
+              margin-bottom: 20px;
+              // background: linear-gradient(75deg, $third-color 0%, $fourth-color 100%);
+              // color: $first-color;
+              // border: 1px solid transparent;
+              padding: 10px 33px;
+              font-size: 12px;
+              display: inline-flex;
+              justify-content: center;
+              border: 10px solid;
+              border: 1px solid $second-color;
+              font-weight: 500;
+              color: $second-color;
+              letter-spacing: 1px;
+              border-radius: 0 20px;
+              .icon {
+                font-size: 15px;
+                margin-right: 10px;
+              }
+            }
+          }
+          .more-categories {
+            text-align: center;
+            span {
+              font-family: Outfit, sans-serif;
+              font-weight: 400;
+              text-decoration: underline;
+              color: $second-color;
+              font-size: 13px;
+              align-content: center;
+            }
+          }
+        }
+      }
+      .right {
+        gap: 10px;
+        display: flex;
+      }
+    }
+  }
+
+  // Subscribe
+
+  #subscribe-section {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 70px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .subscribe-content {
+        .section-title {
+          margin-bottom: 40px;
+          .slide-label {
+            background: linear-gradient(
+              90deg,
+              $third-color 0%,
+              $fourth-color 100%
+            );
+            opacity: 62%;
+            top: 45px;
+            position: absolute;
+            padding: 3px 10px;
+            color: $first-color;
+            font-size: 14px;
+            border-radius: 5px;
+          }
+          h2 {
+            color: black;
+            max-width: 380px;
+            margin: 15px 0;
+            font-size: 38px;
+            font-weight: 600;
+            b {
+              font-weight: 600;
+              font-family: Outfit, sans-serif;
+              display: inline-block;
+              @include text-style;
+            }
+          }
+          p {
+            color: $second-color;
+            font-family: Outfit, sans-serif;
+            font-size: 14px;
+          }
+        }
+        .input-subscribe {
+          form {
+            margin-bottom: 20px;
+            width: 450px;
+            position: relative;
+
+            input {
+              padding: 13px 15px 13px 20px;
+              border: 1px solid black;
+              color: $second-color;
+              position: relative;
+              display: block;
+              width: 100%;
+              background: transparent;
+              border-radius: 0 20px;
+              font-size: 13px;
+              font-family: Outfit, sans-serif;
+              line-height: 1;
+            }
+            .subscribe {
+              position: absolute;
+              right: 0%;
+              border-radius: 0 15px 0 0;
+              color: var(--white);
+              background: linear-gradient(
+                75deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              font-size: 13px;
+              top: 0%;
+              height: 100%;
+              border: 0;
+              padding: 14px 45px;
+            }
+          }
+        }
+      }
+      .subscribe-img {
+        img {
+        }
+      }
+    }
+  }
+  // Pro Gaming Products
+
+  #pro-gaming-products {
+    background: rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 1;
+    padding: 70px 0px;
+    .gaming-products {
+      width: 76px;
+      top: -13%;
+      left: 8%;
+      position: absolute;
+      z-index: -1;
+    }
+    .gaming-products-one {
+      top: -4%;
+      right: 30%;
+      position: absolute;
+      z-index: -1;
+    }
+    .circle {
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+    .design-circle {
+      top: 3%;
+      right: 14%;
+      position: absolute;
+      z-index: -1;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .section-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        color: $first-color;
+        .section-title-left {
+          h2 {
+            width: 320px;
+            font-size: 38px;
+            font-family: Outfit, sans-serif;
+            font-weight: 500;
+          }
+        }
+        .section-title-center {
+          p {
+            color: $second-color;
+            max-width: 440px;
+            font-size: 15px;
+          }
+        }
+        .section-title-right {
+          .btn {
+            &:hover {
+              background: linear-gradient(
+                75deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              color: var(--white);
+              border: 1px solid transparent;
+            }
+            background: transparent;
+            color: $second-color;
+            border: 1px solid $second-color;
+            transition: all ease-in-out 0.3s;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            font-size: 14px;
+            border-radius: 0 20px;
+            padding: 12px 40px;
+            outline: none;
+            .text {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .section-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .section-bottom-left {
+          img {
+            width: 566px;
+          }
+        }
+        .section-bottom-center {
+          padding: 0 15px;
+          color: $first-color;
+          @include product-card-inner;
+        }
+        .section-bottom-right {
+          img {
+            width: 502px;
+          }
+        }
+      }
+    }
+  }
+  // Gaming Products Second
+
+  #gaming-products-second {
+    .products-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .section-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .section-bottom-left {
+          img {
+            width: 480px;
+          }
+        }
+
+        .section-bottom-center {
+          padding: 0 15px;
+          @include product-card-inner;
+          .product-card-inner {
+            .product-title {
+              font-size: 26px;
+            }
+
+            .select-addtocart {
+              .top {
+                .text-small {
+                  color: black;
+                }
+              }
+              .product-content-bottom {
+                .content-left {
+                  color: black;
+                  .price {
+                    font-size: 20px;
+                  }
+                  .unit {
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .section-bottom-right {
+          img {
+            width: 334px;
+          }
+        }
+      }
+    }
+  }
+
+  #gaming-blog {
+    background: rgba(0, 0, 0, 1);
+    position: relative;
+    padding: 60px 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .blog-ring {
+      position: absolute;
+      z-index: 1;
+      top: -3%;
+      right: 13%;
+    }
+    .full-bluthooth {
+      position: absolute;
+      bottom: -5%;
+      left: 8%;
+      width: 80px;
+      z-index: 1;
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .section-top {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        color: $first-color;
+        .section-title-left {
+          h2 {
+            width: 320px;
+            font-size: 38px;
+            font-family: Outfit, sans-serif;
+            font-weight: 500;
+            b {
+              background: linear-gradient(
+                75deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              font-weight: 600;
+              display: inline-block;
+            }
+          }
+        }
+        .section-title-center {
+          p {
+            color: $second-color;
+            max-width: 440px;
+            font-size: 15px;
+          }
+        }
+        .section-title-right {
+          .btn {
+            &:hover {
+              background: linear-gradient(
+                75deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              color: var(--white);
+              border: 1px solid transparent;
+            }
+            background: transparent;
+            color: $second-color;
+            border: 1px solid $second-color;
+            transition: all ease-in-out 0.3s;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            font-size: 14px;
+            border-radius: 0 20px;
+            padding: 12px 40px;
+            outline: none;
+            .text {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .blog-items {
+        .blog-item-card {
+          width: 300px;
+          padding: 0%;
+          border: none;
+          position: relative;
+          width: 300px;
+          height: 100vh;
+          transition: all ease-in-out 0.5s;
+          display: inline-block;
+          .blog-card-image {
+            padding-top: 67%;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            border-radius: 0 12px;
+            border: 1px solid $third-color;
+            img {
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              object-fit: cover;
+            }
+            .blog-labl {
+              background: linear-gradient(
+                90deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              padding: 2px 10px;
+              color: $first-color;
+              font-size: 14px;
+              border-radius: 5px;
+              position: absolute;
+              top: 10px;
+              left: 15px;
+            }
+            .date-labl {
+              color: $first-color;
+              font-size: 14px;
+              position: absolute;
+              top: 13px;
+              right: 15px;
+            }
+          }
+          .blog-product-content {
+            .product-title {
+              max-width: 213px;
+              font-size: 22px;
+              font-family: Outfit, sans-serif;
+              font-weight: 600;
+              margin: 20px 0 10px;
+              color: $first-color;
+            }
+          }
+          .blog-number {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            span {
+              color: $second-color;
+              font-family: Outfit, sans-serif;
+              font-size: 14px;
+            }
+          }
+          .read-more-btn {
+            span {
+              text-align: center;
+              color: $first-color;
+              background: linear-gradient(
+                75deg,
+                $third-color 0%,
+                $fourth-color 100%
+              );
+              padding: 12px 40px;
+              outline: none;
+              cursor: pointer;
+              position: relative;
+              font-size: 14px;
+              transition: all ease-in-out 0.3s;
+              display: inline-flex;
+              align-items: center;
+              border: 1px solid transparent;
+              justify-content: center;
+              -webkit-appearance: none;
+              appearance: none;
+              border-radius: 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

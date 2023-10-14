@@ -1,0 +1,123 @@
+$first-color: #fff;
+$second-color: #838383;
+$third-color: #0098ff;
+$fourth-color: #7b35c8;
+
+.testimonials {
+  margin: 70px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .section-top {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .section-title-left {
+        h2 {
+          color: black;
+          font-size: 38px;
+          font-weight: 600;
+          font-family: Outfit, sans-serif;
+        }
+      }
+      .section-title-right {
+        p {
+          max-width: 440px;
+          color: $second-color;
+        }
+      }
+    }
+    .testimonials-swiper {
+      .testimonials-element {
+        width: 595px;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border: 1px solid $first-color;
+        background: linear-gradient(
+          148deg,
+          rgba(1, 152, 255, 0.18) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        border-radius: 0 10px;
+        color: $first-color;
+        align-items: center;
+        figure {
+          max-width: 148px;
+          width: 100%;
+          position: relative;
+          img {
+            width: 148px;
+          }
+        }
+        .testimonials-content {
+          padding: 15px;
+          max-width: calc(100% - 148px);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          color: black;
+          .testimonial-title {
+            font-family: Outfit, sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+          }
+          p {
+            margin-bottom: 15px;
+            font-family: Outfit, sans-serif;
+            font-size: 14px;
+          }
+          .testimonials-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .testi-pro-info {
+              display: flex;
+              align-items: center;
+              .pro-img {
+                .client-img {
+                  width: 35px;
+                }
+              }
+              h6 {
+                font-family: Outfit, sans-serif;
+
+                .client {
+                  font-weight: 400;
+                }
+              }
+            }
+            .testi-star {
+              img {
+                margin-right: 10px;
+                max-width: 70px;
+              }
+              .star-count {
+                color: black;
+                font-size: 12px;
+                display: block;
+                line-height: 1;
+
+                b {
+                  color: $third-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

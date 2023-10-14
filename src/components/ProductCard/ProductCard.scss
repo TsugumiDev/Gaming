@@ -1,0 +1,174 @@
+.product-card {
+  width: 282px;
+
+  &:hover {
+    .pro_btn {
+      opacity: 1;
+    }
+  }
+  padding: 15px;
+  position: relative;
+  background: linear-gradient(
+    148deg,
+    rgba(1, 152, 255, 0.18) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transition: all ease-in-out 0.5s;
+  border-radius: 0 12px;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 0 12px;
+    border: 1px solid transparent;
+    background: linear-gradient(to left, #0098ff 50%, #7b35c8) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .element {
+    .product-title {
+      font-family: Outfit, sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .product-number {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      li {
+        color: #838383;
+      }
+    }
+    .product-image {
+      position: relative;
+      transition: all ease-in-out 0.6s;
+      padding: 10px 0;
+      position: relative;
+      display: block;
+      padding-top: 80%;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transition: all ease-in-out 0.6s;
+      }
+    }
+    .product-info {
+      .top {
+        span {
+          margin-bottom: 10px;
+          font-size: 12px;
+          color: #fff;
+          font-weight: 600;
+        }
+        select {
+          margin-top: 10px;
+          appearance: none;
+          background: url("/../public/images/dropdown.png") no-repeat;
+          background-size: 14px;
+          background-position: calc(100% - 15px) 50%;
+          outline: none;
+          position: relative;
+          text-align: left;
+          transition: all 0.2s ease-in-out;
+          user-select: none;
+          padding: 10px 35px 10px 15px;
+          width: 100%;
+          background-color: transparent;
+          border: solid 1px #838383;
+          color: #838383;
+          cursor: pointer;
+          border-radius: 0 10px;
+          display: block;
+          font-family: inherit;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1;
+        }
+      }
+      .bottom-content {
+        margin-top: 20px;
+        .price-addtocart {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .price-item {
+            display: inline-flex;
+            font-family: Outfit, sans-serif;
+            color: rgb(17, 15, 15);
+            font-weight: 600;
+            position: relative;
+            .price {
+              font-size: 20px;
+            }
+            .currency-type {
+              font-size: 10px;
+              display: inline-block;
+              position: absolute;
+              left: 60px;
+              bottom: 16px;
+            }
+          }
+          .add-to-cart {
+            button {
+              &:hover {
+                background: transparent;
+                color: #838383;
+                border: 1px solid #838383;
+              }
+              color: #fff;
+              background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+              padding: 12px 40px;
+              outline: none;
+              cursor: pointer;
+              position: relative;
+              font-size: 14px;
+              transition: all ease-in-out 0.3s;
+              display: inline-flex;
+              align-items: center;
+              border-radius: 0 20px;
+              border: 1px solid transparent;
+              justify-content: center;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pro_btn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+    border-radius: 0 10px;
+    padding: 5px 15px;
+    gap: 10px;
+
+    .icon {
+      position: relative;
+      display: block;
+    }
+  }
+}
