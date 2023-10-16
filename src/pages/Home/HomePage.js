@@ -13,13 +13,13 @@ import GamingProducts from "../../components/GamingProducts/GamingProducts";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import { data } from "../../data";
 import { useState } from "react";
+import BlogCard from "../../components/BlogCard/BlogCard";
 
-const HomePage = () => {
+const HomePage = ({ item }) => {
   const [categoryProducts, setCategoryProducts] = useState(
     data.products["Gaming peripherals"] || []
   );
-
-  const productData = Object.keys(data.products);
+  const productCategories2 = Object.keys(data.blog);
 
   const productCategories = Object.keys(data.products);
   const categories = [
@@ -107,16 +107,19 @@ const HomePage = () => {
               <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
-                loop={true}
                 pagination={true}
                 modules={[Pagination]}
                 className="mySwiper"
               >
-                <SwiperSlide>
-                  {productData.map((item) => (
-                    <ProductCard key={item?.id} item={item} />
-                  ))}
-                </SwiperSlide>
+                {Object.keys(data.products).map((category) => (
+                  <div key={category}>
+                    {data.products[category].map((product) => (
+                      <SwiperSlide>
+                        <ProductCard key={product.id} item={product} />
+                      </SwiperSlide>
+                    ))}
+                  </div>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -192,18 +195,6 @@ const HomePage = () => {
                     <span>{item.name}</span>
                   </li>
                 ))}
-                {/* <li>
-                  <IoGameControllerOutline className="icon" />
-                  <span>Gaming peripherals</span>
-                </li>
-                <li>
-                  <BsSpeaker className="icon" />
-                  <span>Speakers & Headphones</span>
-                </li>
-                <li>
-                  <LuBatteryFull className="icon" />
-                  <span>Power Supplies</span>
-                </li> */}
               </ul>
               <div class="more-categories">
                 <span>SHOW MORE CATEGORIES</span>
@@ -211,37 +202,23 @@ const HomePage = () => {
             </div>
           </div>
           <div className="right">
-            {categoryProducts.map((item) => (
-              <ProductCard key={item?.id} item={item} />
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Subscribe */}
-      <section id="subscribe-section">
-        <div className="container">
-          <div className="subscribe-content">
-            <div class="section-title">
-              <span class="slide-label">Subscribe Us</span>
-              <h2>
-                Subscribe newsletter and <b>get -20% off</b>
-              </h2>
-              <p>
-                Almost three-quarters of dedicated PC gamers say their main
-                motivation to upgrade is improving gaming experiences.
-              </p>
-            </div>
-            <div className="input-subscribe">
-              <form>
-                <input type="email" placeholder="Enter email address..." />
-                <button type="submit" class="subscribe">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div className="subscribe-img">
-            <img src="/images/subscribe-img.webp" alt="subscribe-img" />
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              {categoryProducts.map((item) => (
+                <SwiperSlide>
+                  <ProductCard key={item?.id} item={item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
@@ -285,6 +262,35 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      {/* Subscribe */}
+      <section id="subscribe-section">
+        <div className="container">
+          <div className="subscribe-content">
+            <div class="section-title">
+              <span class="slide-label">Subscribe Us</span>
+              <h2>
+                Subscribe newsletter and <b>get -20% off</b>
+              </h2>
+              <p>
+                Almost three-quarters of dedicated PC gamers say their main
+                motivation to upgrade is improving gaming experiences.
+              </p>
+            </div>
+            <div className="input-subscribe">
+              <form>
+                <input type="email" placeholder="Enter email address..." />
+                <button type="submit" class="subscribe">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="subscribe-img">
+            <img src="/images/subscribe-img.webp" alt="subscribe-img" />
+          </div>
+        </div>
+      </section>
+
       {/*  Pro Gaming Products */}
       <section id="pro-gaming-products">
         <img
@@ -445,27 +451,11 @@ const HomePage = () => {
           </div>
 
           <div className="blog-items">
-            <div className="blog-item-card">
-              <div className="blog-card-image">
-                <img src="/images/10.webp" alt="blog-img" />
-                <div class="blog-labl">news</div>
-                <div class="date-labl">
-                  <span>December 13, 2022</span>
-                </div>
-              </div>
-              <div class="blog-product-content">
-                <h4 class="product-title">The Dev Diary...</h4>
-              </div>
-              <div class="blog-number">
-                <span>AUTHOR: WorkDo</span>
-              </div>
-              <div class="read-more-btn">
-                <span>READ MORE</span>
-              </div>
-            </div>
+            {/* <BlogCard item={item} isBlogPage={false} /> */}
           </div>
         </div>
       </section>
+
       <GamingProducts />
       <Testimonials />
     </div>

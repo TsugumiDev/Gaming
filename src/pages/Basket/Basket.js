@@ -1,9 +1,46 @@
 import React from "react";
-import "../Basket/Basket.scss";
+import { useSelector } from "react-redux";
+import "./Basket.scss";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const Basket = () => {
+  const basketProducts = useSelector((state) => state.basket.basketProducts);
+
+  // const getProductTotalCount = () => {
+  //   let totalCount = 0;
+
+  //   basketProducts?.forEach((item) => {
+  //     totalCount += item?.count;
+  //   });
+
+  //   return totalCount;
+  // };
+
+  // const getDiscountTotal = () => {
+  //   let totalDiscount = 0;
+
+  //   basketProducts?.forEach((item) => {
+  //     totalDiscount +=
+  //       +item?.product?.discountAmount?.replace(" ₼", "") * item?.count;
+  //   });
+
+  //   return totalDiscount;
+  // };
+
+  // const getTotalPrice = () => {
+  //   let totalPrice = 0;
+
+  //   basketProducts?.forEach((item) => {
+  //     totalPrice += +item?.product?.price?.replace(" ₼", "") * item?.count;
+  //   });
+
+  //   return +totalPrice?.toFixed(2);
+  // };
+
+  // const totalPrice = getTotalPrice();
+  // const totalDiscount = getDiscountTotal();
   return (
     <div className="basket">
       <div className="container">
@@ -17,14 +54,14 @@ const Basket = () => {
         <div className="section-contenet">
           <div className="left">
             <div className="cart-items">
-              <table class="cart-tble">
+              <table class="cart-table">
                 <thead>
                   <tr>
-                    <th>IMAGE</th>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                    <th>QUANTITY</th>
-                    <th>TOTAL</th>
+                    <th className="img">IMAGE</th>
+                    <th className="name">NAME</th>
+                    <th className="price">PRICE</th>
+                    <th className="quantiy">QUANTITY</th>
+                    <th className="total">TOTAL</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,7 +73,6 @@ const Basket = () => {
                       <span class="cart-item__name">
                         Alien ware Monitor T 46
                       </span>
-
                       <div class="product-option">
                         <span className="parameters">Size:</span>
                         <div className="parameters-text">32 Inches</div>
@@ -48,9 +84,13 @@ const Basket = () => {
                     </td>
                     <td className="cart-item__quantity">
                       <div className="counter">
-                        <button>-</button>
+                        <button>
+                          <AiOutlinePlus />
+                        </button>
                         <span>1</span>
-                        <button>+</button>
+                        <button>
+                          <AiOutlineMinus />
+                        </button>
                       </div>
                     </td>
                     <td class="cart-item-totals">
@@ -60,7 +100,7 @@ const Basket = () => {
                           <span class="currency-type">USD</span>
                         </div>
                         <div className="remove-btn">
-                          <RiDeleteBin6Line />
+                          <RiDeleteBin6Line className="remove-icon" />
                         </div>
                       </div>
                     </td>
@@ -77,7 +117,25 @@ const Basket = () => {
                 placeholder="Order special instructions"
               ></textarea>
             </div>
-            <div className="right-bottom"></div>
+            <div className="right-bottom">
+              <div className="subtotal-content">
+                <div class="totals">
+                  <h3 class="totals-subtotal">Subtotal</h3>
+                  <p class="totals-subtotal-value">
+                    <span className="price">3,430.00 </span>
+                    <span class="currency-type">USD</span>
+                  </p>
+                </div>
+                <small class="tax-note">
+                  Taxes and shipping calculated at checkout
+                </small>
+              </div>
+              <div className="checkout">
+                <button type="submit" class="checkout-btn">
+                  Proceed to checkout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

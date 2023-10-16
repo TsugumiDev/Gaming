@@ -438,7 +438,6 @@ $fourth-color: #7b35c8;
             width: 80vw;
             .swiper-wrapper {
               .swiper-slide {
-                width: 100% !important;
                 display: flex;
                 gap: 30px;
               }
@@ -581,8 +580,39 @@ $fourth-color: #7b35c8;
         }
       }
       .right {
+        width: 75%;
         gap: 10px;
         display: flex;
+        .swiper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          .swiper-wrapper {
+            display: flex;
+            .swiper-slide {
+              width: 260px;
+            }
+          }
+        }
+        .swiper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .swiper-pagination {
+            display: none;
+          }
+          .swiper-button-next {
+            &::after {
+              --swiper-navigation-size: 24px;
+            }
+          }
+          .swiper-button-prev {
+            &::after {
+              --swiper-navigation-size: 24px;
+            }
+          }
+        }
       }
     }
   }

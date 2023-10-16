@@ -3,10 +3,59 @@ import { IoEyeOutline } from "react-icons/io5";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdCompareArrows } from "react-icons/md";
 import "../ProductCard/ProductCard.scss";
+import { data } from "../../data";
 import { useNavigate } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addToBasketAction } from "../../store/actions/actions";
+import Backdrop from "@mui/material/Backdrop";
+import Button from "@mui/joy/Button";
+import Modal from "@mui/joy/Modal";
+import ModalClose from "@mui/joy/ModalClose";
+import Typography from "@mui/joy/Typography";
+import Sheet from "@mui/joy/Sheet";
+import GamingProducts from "../GamingProducts/GamingProducts";
+import AboutProduct from "../AboutProduct/AboutProduct";
+import ModalProduct from "../ModalProduct/ModalProduct";
+// Basket
+// import { useDispatch, useSelector } from "react-redux";
+// import {
+//   addToBasketAction,
+//   addToFavoritesAction,
+//   addToViewedAction,
+//   removeFromFavoritesAction,
+// } from "../../../../../store/actions/actions";
 
 const ProductCard = ({ item }) => {
   const navigate = useNavigate();
+  const productCategories = Object.keys(data.products);
+
+  // Basket
+
+  // const [product, setProduct] = useState();
+  // const dispatch = useDispatch();
+  // const basketProducts = useSelector((state) => state.basket.basketProducts);
+
+  // const handleAddToBasket = () => {
+  //   const findedItem = basketProducts?.find(
+  //     (item) => item.product.title === product?.title
+  //   );
+
+  //   if (findedItem == undefined) {
+  //     dispatch(
+  //       addToBasketAction([...basketProducts, { product: product, count: 1 }])
+  //     );
+  //   } else {
+  //     const filteredProducts = basketProducts?.filter(
+  //       (item) => item.product.title !== product?.title
+  //     );
+  //     dispatch(
+  //       addToBasketAction([
+  //         ...filteredProducts,
+  //         { product: product, count: findedItem.count + 1 },
+  //       ])
+  //     );
+  //   }
+  // };
 
   const selectColorOrSize = () => {
     let obj = {
@@ -35,8 +84,8 @@ const ProductCard = ({ item }) => {
     `/images/products/${item?.routeName}/${colorOrSizeObj.list?.[0]?.image}`
   );
 
-  const goToProductPage = () => {
-    navigate(`/products/${item?.routeName}`);
+  const goToProductPage = (e) => {
+    // navigate(`/products/${item?.routeName}`);
   };
 
   useEffect(() => {
@@ -45,6 +94,36 @@ const ProductCard = ({ item }) => {
 
   console.log(src);
   console.log("11", item?.routeName, selectedObj?.image);
+
+  // const basketProducts = useSelector((state) => state.basket.basketProducts);
+
+  // const dispatch = useDispatch();
+
+  // const handleAddToBasket = () => {
+  //   const findedItem = basketProducts?.find(
+  //     (item) => item.product.title === data?.title
+  //   );
+
+  //   if (findedItem == undefined) {
+  //     dispatch(
+  //       addToBasketAction([...basketProducts, { product: data, count: 1 }])
+  //     );
+  //   } else {
+  //     const filteredProducts = basketProducts?.filter(
+  //       (item) => item.product.title !== data?.title
+  //     );
+  //     dispatch(
+  //       addToBasketAction([
+  //         ...filteredProducts,
+  //         { product: data, count: findedItem.count + 1 },
+  //       ])
+  //     );
+  //   }
+  // };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div className="product-card" onClick={goToProductPage}>
@@ -85,9 +164,7 @@ const ProductCard = ({ item }) => {
                 <span class="currency-type">USD</span>
               </div>
               <div className="add-to-cart">
-                <button type="submit" onClick={(e) => e.stopPropagation()}>
-                  Add to Cart
-                </button>
+                <button type="submit">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -97,8 +174,58 @@ const ProductCard = ({ item }) => {
         <span className="icon">
           <AiOutlineHeart />
         </span>
-        <span className="icon">
-          <IoEyeOutline />
+        <span className="modal">
+          <div className="modal-produt">
+            <Button
+              className="btn"
+              variant="outlined"
+              color="neutral"
+              onClick={() => setOpen(true)}
+              style={{ border: "none", backgroundColor: "transparent" }}
+            >
+              <IoEyeOutline />
+            </Button>
+            <Modal
+              variant="outlined"
+              aria-labelledby="modal-title"
+              aria-describedby="modal-desc"
+              open={open}
+              onClose={() => setOpen(false)}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Sheet
+                variant="outlined"
+                sx={{
+                  maxWidth: 1300,
+                  borderRadius: "md",
+                  p: 3,
+                  boxShadow: "lg",
+                  border: "1px solid red",
+                  backgroundColor: "black",
+                }}
+              >
+                <ModalClose variant="plain" sx={{ m: 1 }} />
+                <Typography
+                  component="h2"
+                  id="modal-title"
+                  level="h4"
+                  textColor="inherit"
+                  fontWeight="lg"
+                  mb={1}
+                >
+                  <ModalProduct key={item?.id} item={item} />
+                </Typography>
+                <Typography
+                  id="modal-desc"
+                  textColor="text.tertiary"
+                ></Typography>
+              </Sheet>
+            </Modal>
+          </div>
         </span>
         <span className="icon">
           <MdCompareArrows />

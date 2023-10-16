@@ -1,0 +1,183 @@
+$first-color: #fff;
+$second-color: #838383;
+$third-color: #0098ff;
+$fourth-color: #7b35c8;
+
+.modal-product {
+  .container {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .left {
+      width: 416px;
+      .common-heading {
+        .review-stars {
+          display: flex;
+          color: #fff;
+          gap: 10px;
+          margin: 0 0 20px;
+
+          .stars {
+            display: flex;
+            align-items: center;
+          }
+          .review {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .review-icon {
+              font-size: 13px;
+              margin-right: 5px;
+            }
+          }
+        }
+        .info-title {
+          font-size: 38px;
+          font-family: Outfit, sans-serif;
+          color: $first-color;
+          margin-bottom: 20px;
+        }
+        .pro-number {
+          display: flex;
+          gap: 15px;
+          li {
+            color: $second-color;
+          }
+        }
+        .info-description {
+          margin: 20px 0;
+          color: $second-color;
+        }
+      }
+      .product-select {
+        margin-bottom: 20px;
+        .pro-labl {
+          margin-bottom: 10px;
+          font-size: 12px;
+          color: $first-color;
+          font-weight: 600;
+        }
+        .selected {
+          border: solid 1px $second-color;
+          color: $second-color;
+          cursor: pointer;
+          border-radius: 0 10px;
+          display: block;
+          font-family: inherit;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1;
+          outline: none;
+          position: relative;
+          text-align: left;
+          transition: all 0.2s ease-in-out;
+          user-select: none;
+          padding: 10px 35px 10px 15px;
+          width: 100%;
+          appearance: none;
+          background: url("/../public/images/dropdown.png") no-repeat;
+          background-size: 14px;
+          background-position: calc(100% - 15px) 50%;
+        }
+      }
+      .product-content-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 20px;
+        .price {
+          position: relative;
+          color: $first-color;
+          flex-shrink: 0;
+          line-height: 1;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-family: Outfit, sans-serif;
+          font-weight: 600;
+          .number {
+            font-size: 30px;
+            display: inline-flex;
+          }
+          .currency-type {
+            font-size: 13px;
+            bottom: 27px;
+            left: 90px;
+            position: absolute;
+          }
+        }
+        .quantity-select {
+          display: flex;
+          width: 200px;
+          gap: 10px;
+          align-items: center;
+          justify-content: start;
+          .lbl {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: $second-color;
+          }
+          .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(76 62 62 / 15%);
+            display: flex;
+            max-width: 100px;
+            border-color: $second-color;
+            height: 30px;
+            width: 100%;
+            border-radius: 0 10px;
+            .quantity-btn {
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              color: $second-color;
+              border: 0;
+              flex: 1;
+            }
+            .count-number {
+              color: $second-color;
+            }
+          }
+        }
+      }
+      .card-btns {
+        display: flex;
+        gap: 15px;
+
+        .btn {
+          padding: 7px 30px;
+          text-align: center;
+          color: $first-color;
+          background: linear-gradient(
+            75deg,
+            $third-color 0%,
+            $fourth-color 100%
+          );
+          padding: 12px 40px;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          font-size: 14px;
+          transition: all ease-in-out 0.3s;
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid transparent;
+          justify-content: center;
+          -webkit-appearance: none;
+          appearance: none;
+          border-radius: 0 20px;
+        }
+      }
+    }
+    .right {
+      .imgage-product {
+        width: 300px;
+      }
+    }
+  }
+}

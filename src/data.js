@@ -79,6 +79,7 @@ export const data = {
         category: "Gaming peripherals",
       },
     ],
+
     "Speakers & Headphones": [
       {
         id: "speakers-headphones-1",
@@ -144,4 +145,47 @@ export const data = {
       },
     ],
   },
+
+  blog: [
+    {
+      id: "1",
+      images: "10(1).webp",
+      title: "The Dev Diary Season Points Boomstick Gaming",
+    },
+    {
+      id: "2",
+      images: "6.webp",
+      title: "The Dirty Video Game World Of Nettles",
+    },
+    {
+      id: "3",
+      images: "4.webp",
+      title: "Phantasy Star Games Show Stream",
+    },
+    {
+      id: "4",
+      images: "2.webp",
+      title: "Playful Writing Gamer Territory",
+    },
+    {
+      id: "5",
+      images: "7.png",
+      title: "The Loud Review Geek & girlty",
+    },
+    {
+      id: "6",
+      images: "5.webp",
+      title: "Last Living Man Games Game Bandits",
+    },
+    {
+      id: "7",
+      images: "3.webp",
+      title: "Gaming Magnitude Gamer Reserve",
+    },
+    {
+      id: "8",
+      images: "1.webp",
+      title: "Game Smart Lunar World Basement Playground",
+    },
+  ],
 };
