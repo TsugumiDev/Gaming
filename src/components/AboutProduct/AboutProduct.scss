@@ -8,6 +8,9 @@ $fourth-color: #7b35c8;
   padding: 210px 0 70px;
   background: rgba(0, 0, 0, 1);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .circle-b {
     top: 0%;
     right: 0;
@@ -49,6 +52,9 @@ $fourth-color: #7b35c8;
       }
     }
     .product-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .left {
         width: 450px;
         padding: 0 15px;

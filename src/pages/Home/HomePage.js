@@ -19,7 +19,7 @@ const HomePage = ({ item }) => {
   const [categoryProducts, setCategoryProducts] = useState(
     data.products["Gaming peripherals"] || []
   );
-  const productCategories2 = Object.keys(data.blog);
+  // const productCategories2 = Object.keys(data.blog);
 
   const productCategories = Object.keys(data.products);
   const categories = [
@@ -451,13 +451,65 @@ const HomePage = ({ item }) => {
           </div>
 
           <div className="blog-items">
-            {/* <BlogCard item={item} isBlogPage={false} /> */}
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              {data.blog.map((product) => (
+                <SwiperSlide>
+                  <BlogCard key={product.id} item={product} />
+                  <BlogCard key={product.id} item={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
 
       <GamingProducts />
-      <Testimonials />
+
+      <div id="testimonials">
+        <div className="container">
+          <div className="section-top">
+            <div class="section-title-left">
+              <h2>Testimonials</h2>
+            </div>
+            <div class="section-title-right">
+              <p>
+                A video game console is an electronic device that outputs a
+                video signal or image to display a video game that can be played
+                with a game controller.
+              </p>
+            </div>
+          </div>
+          <div className="testimonials-swiper">
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              {data.testimonials.map((product) => (
+                <SwiperSlide>
+                  <Testimonials key={product.id} item={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

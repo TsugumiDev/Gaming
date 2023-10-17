@@ -976,100 +976,57 @@ $fourth-color: #7b35c8;
         }
       }
       .blog-items {
-        .blog-item-card {
-          width: 300px;
-          padding: 0%;
-          border: none;
-          position: relative;
-          width: 300px;
-          height: 100vh;
-          transition: all ease-in-out 0.5s;
-          display: inline-block;
-          .blog-card-image {
-            padding-top: 67%;
-            overflow: hidden;
-            display: block;
-            position: relative;
-            border-radius: 0 12px;
-            border: 1px solid $third-color;
-            img {
-              height: 100%;
-              width: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              object-fit: cover;
-            }
-            .blog-labl {
-              background: linear-gradient(
-                90deg,
-                $third-color 0%,
-                $fourth-color 100%
-              );
-              padding: 2px 10px;
-              color: $first-color;
-              font-size: 14px;
-              border-radius: 5px;
-              position: absolute;
-              top: 10px;
-              left: 15px;
-            }
-            .date-labl {
-              color: $first-color;
-              font-size: 14px;
-              position: absolute;
-              top: 13px;
-              right: 15px;
-            }
+        width: 1000px;
+      }
+    }
+    .swiper-pagination {
+      display: none;
+    }
+  }
+  #testimonials {
+    margin: 70px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .section-top {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .section-title-left {
+          h2 {
+            color: black;
+            font-size: 38px;
+            font-weight: 600;
+            font-family: Outfit, sans-serif;
           }
-          .blog-product-content {
-            .product-title {
-              max-width: 213px;
-              font-size: 22px;
-              font-family: Outfit, sans-serif;
-              font-weight: 600;
-              margin: 20px 0 10px;
-              color: $first-color;
-            }
-          }
-          .blog-number {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            span {
-              color: $second-color;
-              font-family: Outfit, sans-serif;
-              font-size: 14px;
-            }
-          }
-          .read-more-btn {
-            span {
-              text-align: center;
-              color: $first-color;
-              background: linear-gradient(
-                75deg,
-                $third-color 0%,
-                $fourth-color 100%
-              );
-              padding: 12px 40px;
-              outline: none;
-              cursor: pointer;
-              position: relative;
-              font-size: 14px;
-              transition: all ease-in-out 0.3s;
-              display: inline-flex;
-              align-items: center;
-              border: 1px solid transparent;
-              justify-content: center;
-              -webkit-appearance: none;
-              appearance: none;
-              border-radius: 0 20px;
-            }
+        }
+        .section-title-right {
+          p {
+            max-width: 440px;
+            color: $second-color;
           }
         }
       }
+      .testimonials-swiper {
+        width: 100%;
+      }
+    }
+    .swiper-wrapper {
+      width: 100vw;
+      display: flex;
+      gap: 7rem;
+    }
+    .swiper-pagination {
+      display: none;
     }
   }
 }

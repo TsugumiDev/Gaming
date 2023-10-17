@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../AboutProduct/AboutProduct.scss";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import {
@@ -10,7 +10,42 @@ import {
 import { BsPencil } from "react-icons/bs";
 import { BiCut } from "react-icons/bi";
 
-const AboutProduct = () => {
+const AboutProduct = ({ item }) => {
+  const selectColorOrSize = () => {
+    let obj = {
+      label: "",
+      options: [],
+      list: [],
+      naming: "",
+    };
+    if (item?.sizes) {
+      obj.label = "Size:";
+      obj.options = item?.sizes?.map((s) => s?.size);
+      obj.list = item?.sizes;
+      obj.naming = "size";
+    } else if (item?.colors) {
+      obj.label = "Color:";
+      obj.options = item?.colors?.map((c) => c?.color);
+      obj.list = item?.colors;
+      obj.naming = "color";
+    }
+    return obj;
+  };
+
+  const colorOrSizeObj = selectColorOrSize();
+  const [selectedObj, setSelectedObj] = useState();
+
+  useEffect(() => {
+    setSelectedObj(colorOrSizeObj.list?.[0]);
+  }, [colorOrSizeObj.list]);
+
+  const [src, setSrc] = useState(
+    `/images/products/${item?.routeName}/${colorOrSizeObj.list?.[0]?.image}`
+  );
+  useEffect(() => {
+    setSrc(`/images/products/${item?.routeName}/${selectedObj?.image}`);
+  }, [item?.routeName, selectedObj?.image]);
+
   return (
     <div className="about-product">
       <img src="/images/circle-b.png" className="circle-b" alt="circle-img" />
@@ -44,13 +79,13 @@ const AboutProduct = () => {
                   <span className="review-text">Write a Review</span>
                 </div>
               </div>
-              <h2 className="info-title">Alien ware Monitor T 46</h2>
+              <h2 className="info-title">{item?.productName}</h2>
               <ul class="pro-number">
-                <li>TYPE: Monitors</li>
+                <li>TYPE: {item?.productType}</li>
 
                 <li>
                   <span className="element">SKU:</span>
-                  <span class="sku">1120550231151</span>
+                  <span class="sku">{item?.sku}</span>
                 </li>
 
                 <li>
@@ -58,22 +93,35 @@ const AboutProduct = () => {
                   <span className="text">See Sizing Guide</span>
                 </li>
               </ul>
-              <p className="info-description">
-                Exceptional Full HD IPS 21.5 Inch Ultra Thin Display : Enjoy
-                immaculate image quality with 1920x1080 resolution and 178
-                degree wide viewing angles I Zero...
-              </p>
+              <p className="info-description">{item?.description}</p>
             </div>
             <div class="product-select">
-              <div class="pro-labl">Size:</div>
-              <select class="selected">
-                <option>32 Inches</option>
-                <option>28 Inches</option>
+              <div class="pro-labl">{colorOrSizeObj.label}</div>
+              <select
+                className="selected"
+                onChange={(e) => {
+                  e.stopPropagation();
+                  const found = colorOrSizeObj.list?.find(
+                    (c) => c?.[colorOrSizeObj.naming] === e.target.value
+                  );
+                  if (found) {
+                    setSelectedObj(found);
+                  }
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {colorOrSizeObj.options.map((op) => (
+                  <option data-val={op} value={op}>
+                    {op}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="product-content-bottom">
               <div className="price">
-                <span className="number">850.00</span>
+                <span className="number">
+                  {selectedObj?.pricesInUSD?.price}
+                </span>
                 <span className="currency-type">USD</span>
               </div>
               <div className="quantity-select">
@@ -91,10 +139,14 @@ const AboutProduct = () => {
             </div>
             <div className="card-btns">
               <button className="btn">Add to Cart</button>
-              <button className="btn">Add to Cart</button>
+              <button className="btn">Buy it now</button>
             </div>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <div className="img">
+              <img src={src} alt="testimonials-img" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

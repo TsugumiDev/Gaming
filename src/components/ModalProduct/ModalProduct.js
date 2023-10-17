@@ -34,8 +34,6 @@ const ModalProduct = ({ item }) => {
     setSrc(`/images/products/${item?.routeName}/${selectedObj?.image}`);
   }, [item?.routeName, selectedObj?.image]);
 
-  console.log(src);
-  console.log("11", item?.routeName, selectedObj?.image);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

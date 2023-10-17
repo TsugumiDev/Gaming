@@ -25,10 +25,11 @@ const Shops = () => {
   const [products, setProducts] = useState([]);
   const [filteredListByColor, setFilteredListByColor] = useState([]);
   const [filteredListByType, setFilteredListByType] = useState([]);
+  const [filteredListInsStock, setfilteredListInsStock] = useState([]);
 
   const [color, setColor] = useState("");
   const [type, setType] = useState("");
-
+  const [inStock, setinStock] = useState("");
   useEffect(() => {
     const selected = Object.values(data.products).flat();
     if (selected) {
@@ -44,6 +45,15 @@ const Shops = () => {
       })
     );
   }, [color]);
+
+  useEffect(() => {
+    const list = Object.values(data.products).flat();
+    setFilteredListByType(
+      list?.filter((item) => {
+        return item.inStock === inStock;
+      })
+    );
+  }, [inStock]);
 
   useEffect(() => {
     const list = Object.values(data.products).flat();
@@ -70,6 +80,42 @@ const Shops = () => {
       setType(e.target.name);
     }
   };
+  const handleCheckboxInStock = (e) => {
+    setColor("");
+    if (inStock === e.target.name) {
+      setType("");
+    } else {
+      setType(e.target.name);
+    }
+  };
+
+  const [minPrice, setMinPrice] = useState("0");
+  const [maxPrice, setMaxPrice] = useState("646.00");
+
+  const handleMinPriceChange = (event) => {
+    setMinPrice(event.target.value);
+  };
+
+  const handleMaxPriceChange = (event) => {
+    setMaxPrice(event.target.value);
+  };
+
+  const handleApplyFilter = () => {
+    const minPriceNumber = parseFloat(minPrice);
+    const maxPriceNumber = parseFloat(maxPrice);
+
+    const filteredProducts = products["Gaming peripherals"].filter(
+      (product) => {
+        const productPrice = product.colors[0].pricesInUSD.price;
+        return productPrice >= minPriceNumber && productPrice <= maxPriceNumber;
+      }
+    );
+
+    setProducts({
+      ...products,
+      "Gaming peripherals": filteredProducts,
+    });
+  };
 
   const handleAccordionClick1 = (e) => {
     setIsExpanded1(!isExpanded1);
@@ -86,9 +132,6 @@ const Shops = () => {
   const handleAccordionClick5 = (e) => {
     setIsExpanded5(!isExpanded5);
   };
-
-  // const productData = Object.keys(data.products);
-  console.log(" text", Object.keys(data.products));
 
   const redirectToHome = () => {
     navigate("/home");
@@ -153,7 +196,12 @@ const Shops = () => {
                         <ul className="acardion-filter-list">
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                onClick={handleCheckboxInStock}
+                                name="In stock"
+                                checked={inStock === "In stock"}
+                              />
                               <span>In stock</span>
                             </label>
                             <span class="filter-count">(3)</span>
@@ -194,17 +242,21 @@ const Shops = () => {
                           <div class="field">
                             <label class="field-label">Min price:</label>
                             <input
-                              class="field-input"
+                              className="field-input"
                               type="text"
                               placeholder="0"
+                              value={minPrice}
+                              onChange={handleMinPriceChange}
                             />
                           </div>
                           <div class="field">
                             <label class="field-label">Max price:</label>
                             <input
-                              class="field-input"
+                              className="field-input"
                               type="text"
                               placeholder="646.00"
+                              value={maxPrice}
+                              onChange={handleMaxPriceChange}
                             />
                           </div>
                         </div>
@@ -280,15 +332,25 @@ const Shops = () => {
                         <ul className="acardion-filter-list">
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
-                              <span onClick={handleCheckboxType}>HyperX</span>
+                              <input
+                                type="checkbox"
+                                name="XFX"
+                                checked={type === "XFX"}
+                                onChange={handleCheckboxType}
+                              />
+                              <span>XFX</span>
                             </label>
                             <span class="filter-count">(3)</span>
                           </li>
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
-                              <span onClick={handleCheckboxType}>Sony PS5</span>
+                              <input
+                                type="checkbox"
+                                name="Sony PS5"
+                                checked={type === "Sony PS5"}
+                                onChange={handleCheckboxType}
+                              />
+                              <span>Sony PS5</span>
                             </label>
                             <span class="filter-count">(1)</span>
                           </li>

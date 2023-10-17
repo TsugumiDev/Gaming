@@ -7,27 +7,72 @@ import Footer from "./components/Footer/Footer";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./pages/Basket/Basket";
 import Shops from "./pages/Shop/Shop";
-// import ModalProduct from "./components/ModalProduct/ModalProduct";
+import { data } from "../src/data";
+import { store, persistor } from "../src/store/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import Wrapper from "./components/Wrapper/Wrapper";
+
 function App() {
+  const products = Object.keys(data.products);
+
   return (
     <div className="App">
-      {/* <Header /> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/basket" element={<Basket />} />
-          {/* <Route exact path="/modal" element={<ModalProduct />} /> */}
-          <Route
-            exact
-            path="/products/:productName"
-            element={<ProductPage />}
-          />
-          <Route exact path="/shop" element={<Shops />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Wrapper>
+                    <HomePage />
+                  </Wrapper>
+                }
+              />
+              <Route path="/home" element={<Navigate to="/" replace />} />
+              <Route
+                exact
+                path="/about"
+                element={
+                  <Wrapper>
+                    <About />
+                  </Wrapper>
+                }
+              />
+              <Route
+                exact
+                path="/basket"
+                element={
+                  <Wrapper>
+                    <Basket item={data} />
+                  </Wrapper>
+                }
+              />
+              {/* <Route exact path="/modal" element={<ModalProduct />} /> */}
+              <Route
+                exact
+                path="/products/:productName"
+                element={
+                  <Wrapper>
+                    <ProductPage />
+                  </Wrapper>
+                }
+              />
+              <Route
+                exact
+                path="/shop"
+                element={
+                  <Wrapper>
+                    <Shops />
+                  </Wrapper>
+                }
+              />
+            </Routes>
+          </BrowserRouter>
+          <Footer />
+        </PersistGate>
+      </Provider>
     </div>
   );
 }

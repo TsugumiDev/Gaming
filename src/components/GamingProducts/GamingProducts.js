@@ -46,19 +46,14 @@ const GamingProducts = () => {
               modules={[Pagination, Navigation]}
               className="mySwiper"
             >
-              {/* {Object.keys(data.products).map((category) => (
+              {Object.keys(data.products).map((category) => (
                 <div key={category}>
                   {data.products[category].map((product) => (
                     <SwiperSlide>
-                      <BlogCard key={product.id} item={product} />
+                      <ProductCard key={product.id} item={product} />
                     </SwiperSlide>
                   ))}
                 </div>
-              ))} */}
-              {data.blog.map((b) => (
-                <SwiperSlide>
-                  <BlogCard key={b.id} item={b} />
-                </SwiperSlide>
               ))}
             </Swiper>
           </div>

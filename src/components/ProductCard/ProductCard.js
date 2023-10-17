@@ -5,8 +5,8 @@ import { MdCompareArrows } from "react-icons/md";
 import "../ProductCard/ProductCard.scss";
 import { data } from "../../data";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addToBasketAction } from "../../store/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasketAction } from "../../store/actions/actions";
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/joy/Button";
 import Modal from "@mui/joy/Modal";
@@ -16,14 +16,6 @@ import Sheet from "@mui/joy/Sheet";
 import GamingProducts from "../GamingProducts/GamingProducts";
 import AboutProduct from "../AboutProduct/AboutProduct";
 import ModalProduct from "../ModalProduct/ModalProduct";
-// Basket
-// import { useDispatch, useSelector } from "react-redux";
-// import {
-//   addToBasketAction,
-//   addToFavoritesAction,
-//   addToViewedAction,
-//   removeFromFavoritesAction,
-// } from "../../../../../store/actions/actions";
 
 const ProductCard = ({ item }) => {
   const navigate = useNavigate();
@@ -31,31 +23,9 @@ const ProductCard = ({ item }) => {
 
   // Basket
 
-  // const [product, setProduct] = useState();
-  // const dispatch = useDispatch();
-  // const basketProducts = useSelector((state) => state.basket.basketProducts);
-
-  // const handleAddToBasket = () => {
-  //   const findedItem = basketProducts?.find(
-  //     (item) => item.product.title === product?.title
-  //   );
-
-  //   if (findedItem == undefined) {
-  //     dispatch(
-  //       addToBasketAction([...basketProducts, { product: product, count: 1 }])
-  //     );
-  //   } else {
-  //     const filteredProducts = basketProducts?.filter(
-  //       (item) => item.product.title !== product?.title
-  //     );
-  //     dispatch(
-  //       addToBasketAction([
-  //         ...filteredProducts,
-  //         { product: product, count: findedItem.count + 1 },
-  //       ])
-  //     );
-  //   }
-  // };
+  const [product, setProduct] = useState();
+  const dispatch = useDispatch();
+  const basketProducts = useSelector((state) => state.basket.basketProducts);
 
   const selectColorOrSize = () => {
     let obj = {
@@ -85,41 +55,34 @@ const ProductCard = ({ item }) => {
   );
 
   const goToProductPage = (e) => {
-    // navigate(`/products/${item?.routeName}`);
+    navigate(`/products/${item?.routeName}`);
   };
 
   useEffect(() => {
     setSrc(`/images/products/${item?.routeName}/${selectedObj?.image}`);
   }, [item?.routeName, selectedObj?.image]);
 
-  console.log(src);
-  console.log("11", item?.routeName, selectedObj?.image);
-
-  // const basketProducts = useSelector((state) => state.basket.basketProducts);
-
-  // const dispatch = useDispatch();
-
-  // const handleAddToBasket = () => {
-  //   const findedItem = basketProducts?.find(
-  //     (item) => item.product.title === data?.title
-  //   );
-
-  //   if (findedItem == undefined) {
-  //     dispatch(
-  //       addToBasketAction([...basketProducts, { product: data, count: 1 }])
-  //     );
-  //   } else {
-  //     const filteredProducts = basketProducts?.filter(
-  //       (item) => item.product.title !== data?.title
-  //     );
-  //     dispatch(
-  //       addToBasketAction([
-  //         ...filteredProducts,
-  //         { product: data, count: findedItem.count + 1 },
-  //       ])
-  //     );
-  //   }
-  // };
+  const handleAddToBasket = (event) => {
+    event.stopPropagation();
+    const findedItem = basketProducts?.find(
+      (item) => item?.products?.productName === data?.productName
+    );
+    if (findedItem == undefined) {
+      dispatch(
+        addToBasketAction([...basketProducts, { item: data, count: 1 }])
+      );
+    } else {
+      const filteredProducts = basketProducts?.filter(
+        (item) => item?.products?.productName !== data?.productName
+      );
+      dispatch(
+        addToBasketAction([
+          ...filteredProducts,
+          { item: data, count: findedItem.count + 1 },
+        ])
+      );
+    }
+  };
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -164,7 +127,9 @@ const ProductCard = ({ item }) => {
                 <span class="currency-type">USD</span>
               </div>
               <div className="add-to-cart">
-                <button type="submit">Add to Cart</button>
+                <button type="submit" onClick={handleAddToBasket}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
