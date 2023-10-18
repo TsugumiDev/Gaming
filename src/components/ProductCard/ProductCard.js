@@ -126,11 +126,19 @@ const ProductCard = ({ item }) => {
                 <span className="price">{selectedObj?.pricesInUSD?.price}</span>
                 <span class="currency-type">USD</span>
               </div>
-              <div className="add-to-cart">
-                <button type="submit" onClick={handleAddToBasket}>
+              {item.inStock ? (
+                <button
+                  className="add-cart"
+                  type="submit"
+                  onClick={handleAddToBasket}
+                >
                   Add to Cart
                 </button>
-              </div>
+              ) : (
+                <button className="added-btn disabled" disabled>
+                  Sold out
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -145,7 +153,10 @@ const ProductCard = ({ item }) => {
               className="btn"
               variant="outlined"
               color="neutral"
-              onClick={() => setOpen(true)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpen(true);
+              }}
               style={{ border: "none", backgroundColor: "transparent" }}
             >
               <IoEyeOutline />

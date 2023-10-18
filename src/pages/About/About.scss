@@ -71,12 +71,16 @@
     padding: 70px 0px;
     .container {
       width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+
       .section-title {
         margin-bottom: 40px;
         h2 {
           font-family: Outfit, sans-serif;
           font-weight: 500;
-          font-size: 30px;
+          font-size: 39px;
           color: #838383;
         }
       }

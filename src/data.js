@@ -51,7 +51,6 @@ export const data = {
         id: "gaming-peripherals-2",
         productName: "Refurbished Xbox Series X 1TB Console",
         type: "XFX",
-        inStock: true,
         productType: "Headset",
 
         colors: [

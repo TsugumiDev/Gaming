@@ -118,35 +118,56 @@ $fourth-color: #7b35c8;
               font-size: 20px;
             }
             .currency-type {
+              left: 36px;
+              bottom: 12px;
               font-size: 10px;
               display: inline-block;
               position: absolute;
-              left: 60px;
-              bottom: 16px;
             }
           }
-          .add-to-cart {
-            button {
-              &:hover {
-                background: transparent;
-                color: #838383;
-                border: 1px solid #838383;
-              }
-              color: #fff;
-              background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
-              padding: 12px 40px;
-              outline: none;
-              cursor: pointer;
-              position: relative;
-              font-size: 14px;
-              transition: all ease-in-out 0.3s;
-              display: inline-flex;
-              align-items: center;
-              border-radius: 0 20px;
-              border: 1px solid transparent;
-              justify-content: center;
-              text-align: center;
+          .add-cart {
+            &:hover {
+              background: transparent;
+              color: #838383;
+              border: 1px solid #838383;
             }
+            color: #fff;
+            background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+            padding: 12px 40px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            font-size: 14px;
+            transition: all ease-in-out 0.3s;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 0 20px;
+            border: 1px solid transparent;
+            justify-content: center;
+            text-align: center;
+          }
+          .added-btn {
+            &:hover {
+              background: transparent;
+              color: #838383;
+              border: 1px solid #838383;
+            }
+            opacity: 0.7;
+            cursor: not-allowed;
+            color: #fff;
+            background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+            padding: 12px 40px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            font-size: 14px;
+            transition: all ease-in-out 0.3s;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 0 20px;
+            border: 1px solid transparent;
+            justify-content: center;
+            text-align: center;
           }
         }
       }

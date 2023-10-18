@@ -25,11 +25,12 @@ const Shops = () => {
   const [products, setProducts] = useState([]);
   const [filteredListByColor, setFilteredListByColor] = useState([]);
   const [filteredListByType, setFilteredListByType] = useState([]);
-  const [filteredListInsStock, setfilteredListInsStock] = useState([]);
+  const [filteredProductType, setfilteredProductType] = useState([]);
 
   const [color, setColor] = useState("");
   const [type, setType] = useState("");
-  const [inStock, setinStock] = useState("");
+  const [productType, setproductType] = useState("");
+
   useEffect(() => {
     const selected = Object.values(data.products).flat();
     if (selected) {
@@ -48,12 +49,12 @@ const Shops = () => {
 
   useEffect(() => {
     const list = Object.values(data.products).flat();
-    setFilteredListByType(
+    setfilteredProductType(
       list?.filter((item) => {
-        return item.inStock === inStock;
+        return item.products?.find((i) => i.productType === productType);
       })
     );
-  }, [inStock]);
+  }, [productType]);
 
   useEffect(() => {
     const list = Object.values(data.products).flat();
@@ -80,41 +81,13 @@ const Shops = () => {
       setType(e.target.name);
     }
   };
-  const handleCheckboxInStock = (e) => {
+  const handleCheckboxProductType = (e) => {
     setColor("");
-    if (inStock === e.target.name) {
-      setType("");
+    if (type === e.target.name) {
+      setproductType("");
     } else {
-      setType(e.target.name);
+      setproductType(e.target.name);
     }
-  };
-
-  const [minPrice, setMinPrice] = useState("0");
-  const [maxPrice, setMaxPrice] = useState("646.00");
-
-  const handleMinPriceChange = (event) => {
-    setMinPrice(event.target.value);
-  };
-
-  const handleMaxPriceChange = (event) => {
-    setMaxPrice(event.target.value);
-  };
-
-  const handleApplyFilter = () => {
-    const minPriceNumber = parseFloat(minPrice);
-    const maxPriceNumber = parseFloat(maxPrice);
-
-    const filteredProducts = products["Gaming peripherals"].filter(
-      (product) => {
-        const productPrice = product.colors[0].pricesInUSD.price;
-        return productPrice >= minPriceNumber && productPrice <= maxPriceNumber;
-      }
-    );
-
-    setProducts({
-      ...products,
-      "Gaming peripherals": filteredProducts,
-    });
   };
 
   const handleAccordionClick1 = (e) => {
@@ -198,9 +171,9 @@ const Shops = () => {
                             <label class="acardion-checkbox">
                               <input
                                 type="checkbox"
-                                onClick={handleCheckboxInStock}
+                                // onChange={handleInStockChange}
                                 name="In stock"
-                                checked={inStock === "In stock"}
+                                checked={type === "In stock"}
                               />
                               <span>In stock</span>
                             </label>
@@ -245,8 +218,8 @@ const Shops = () => {
                               className="field-input"
                               type="text"
                               placeholder="0"
-                              value={minPrice}
-                              onChange={handleMinPriceChange}
+                              // value={minPrice}
+                              // onChange={handleMinPriceChange}
                             />
                           </div>
                           <div class="field">
@@ -255,8 +228,8 @@ const Shops = () => {
                               className="field-input"
                               type="text"
                               placeholder="646.00"
-                              value={maxPrice}
-                              onChange={handleMaxPriceChange}
+                              // value={maxPrice}
+                              // onChange={handleMaxPriceChange}
                             />
                           </div>
                         </div>
@@ -285,7 +258,12 @@ const Shops = () => {
                         <ul className="acardion-filter-list">
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                onClick={handleCheckboxProductType}
+                                name="Headset"
+                                // checked={type === "XFX"}
+                              />
                               <span>Headset</span>
                             </label>
                             <span class="filter-count">(3)</span>

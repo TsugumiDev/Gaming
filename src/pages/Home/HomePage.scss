@@ -440,6 +440,22 @@ $fourth-color: #7b35c8;
               .swiper-slide {
                 display: flex;
                 gap: 30px;
+                .product-card {
+                  .element {
+                    .product-info {
+                      .bottom-content {
+                        .price-addtocart {
+                          .price {
+                            color: white;
+                          }
+                          .currency-type {
+                            color: white;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
             .swiper-pagination {
@@ -547,6 +563,7 @@ $fourth-color: #7b35c8;
               width: 250px;
               height: 39px;
               margin-bottom: 20px;
+              cursor: pointer;
               // background: linear-gradient(75deg, $third-color 0%, $fourth-color 100%);
               // color: $first-color;
               // border: 1px solid transparent;
@@ -592,6 +609,17 @@ $fourth-color: #7b35c8;
             display: flex;
             .swiper-slide {
               width: 260px;
+              .product-card {
+                .element {
+                  .product-info {
+                    .top {
+                      span {
+                        color: black;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
