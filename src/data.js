@@ -52,6 +52,7 @@ export const data = {
         productName: "Refurbished Xbox Series X 1TB Console",
         type: "XFX",
         productType: "Headset",
+        priceItem: "453.0",
 
         colors: [
           {
@@ -91,6 +92,8 @@ export const data = {
         productName: "Rubber Keycaps",
         type: "Vulture",
         productType: "Remote",
+        priceItem: "381.0",
+
         colors: [
           {
             color: "green",
@@ -124,6 +127,8 @@ export const data = {
         productName: "Electrobot Xtreme Gaming Series PC",
         type: "Electrobot",
         productType: "Remote",
+        priceItem: "556.0",
+
         sizes: [
           {
             size: "128 GB",

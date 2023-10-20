@@ -1,0 +1,372 @@
+.shop .section-content {
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop .section-content .container {
+  width: 85%;
+  padding: 70px 0;
+  color: white;
+  background-position: 50% 50%;
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shop .section-content .container .back-btn {
+  margin-bottom: 26px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.shop .section-content .container .back-btn .icon-back {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 100%;
+  text-align: center;
+  padding: 4px 0;
+  margin-right: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.shop .section-content .container .section-title {
+  margin-bottom: 12px;
+}
+.shop .section-content .container .section-title h2 {
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  font-family: Outfit, sans-serif;
+  font-size: 35px;
+  display: inline-block;
+}
+.shop .section-content .container .section-title .num {
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.shop .section-content .container .about-text {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.shop .section-bottom {
+  margin: 70px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.shop .section-bottom .container {
+  width: 85%;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-family: Outfit, sans-serif;
+}
+.shop .section-bottom .container .left .filter-products {
+  width: 270px;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 {
+  padding: 10px 0;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 #panela-header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 #panela-header .title {
+  width: 220px;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0;
+  padding: 0 10px 15px 0;
+  margin: 0 0 15px;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .top .selected {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .top .reset {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .acardion-filter-list {
+  margin-bottom: 8px;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .acardion-filter-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .acardion-filter-list li .acardion-checkbox {
+  display: flex;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .acardion-filter-list li .acardion-checkbox span {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  margin-left: 5px;
+}
+.shop .section-bottom .container .left .filter-products .accordion1 .accordion-details .element .availability-details .acardion-filter-list li .filter-count {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 {
+  padding: 10px 0;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 #panela-header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 #panela-header .title {
+  width: 220px;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0;
+  padding: 0 10px 15px 0;
+  margin: 0 0 15px;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .top .selected {
+  font-size: 12px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .top .reset {
+  font-size: 12px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .filter-price {
+  display: flex;
+  color: #838383, 0.4;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .filter-price .field {
+  padding: 0 5px;
+  font-size: 13px;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .filter-price .field .field-label {
+  margin: 0 0 5px;
+  display: inline-block;
+}
+.shop .section-bottom .container .left .filter-products .accordion2 .accordion-details .element .price-detalis .filter-price .field .field-input {
+  padding: 10px;
+  position: relative;
+  border: 1px solid #cccccc;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  line-height: 1;
+  border-radius: 0 20px;
+  color: #838383;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 {
+  padding: 10px 0;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 #panela-header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 #panela-header .title {
+  width: 220px;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0;
+  padding: 0 10px 15px 0;
+  margin: 0 0 15px;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .top .selected {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .top .reset {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .acardion-filter-list {
+  margin-bottom: 8px;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .acardion-filter-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .acardion-filter-list li .acardion-checkbox {
+  display: flex;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .acardion-filter-list li .acardion-checkbox span {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  margin-left: 5px;
+}
+.shop .section-bottom .container .left .filter-products .accordion3 .accordion-details .element .product-type-detalis .acardion-filter-list li .filter-count {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 {
+  padding: 10px 0;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 #panela-header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 #panela-header .title {
+  width: 220px;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0;
+  padding: 0 10px 15px 0;
+  margin: 0 0 15px;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .top .selected {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .top .reset {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .acardion-filter-list {
+  margin-bottom: 8px;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .acardion-filter-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .acardion-filter-list li .acardion-checkbox {
+  display: flex;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .acardion-filter-list li .acardion-checkbox span {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  margin-left: 5px;
+}
+.shop .section-bottom .container .left .filter-products .accordion4 .acardion-detalis .element .brand-detalis .acardion-filter-list li .filter-count {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 {
+  padding: 10px 0;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 #panela-header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 #panela-header .title {
+  width: 220px;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0;
+  padding: 0 10px 15px 0;
+  margin: 0 0 15px;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .top .selected {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .top .reset {
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list {
+  margin-bottom: 8px;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list li .accordion-checkbox {
+  display: flex;
+  align-items: center;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list li .accordion-checkbox .input {
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: -1px;
+  background: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  margin: 0 10px 0 0;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list li .accordion-checkbox span {
+  margin-left: 5px;
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+}
+.shop .section-bottom .container .left .filter-products .accordion5 .accordion-detalis .element .color-detalis .accordion-filter-list li .filter-count {
+  font-size: 14px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.shop .section-bottom .container .right .container .products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=Shop.css.map */

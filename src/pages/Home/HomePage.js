@@ -17,9 +17,8 @@ import BlogCard from "../../components/BlogCard/BlogCard";
 
 const HomePage = ({ item }) => {
   const [categoryProducts, setCategoryProducts] = useState(
-    data.products["Gaming peripherals"] || []
+    data?.products["Gaming peripherals"] || []
   );
-  // const productCategories2 = Object.keys(data.blog);
 
   const productCategories = Object.keys(data.products);
   const categories = [
@@ -38,7 +37,7 @@ const HomePage = ({ item }) => {
   ];
 
   const filterCategory = (categoryName) => {
-    const filteredList = data.products[categoryName];
+    const filteredList = data?.products[categoryName];
     setCategoryProducts(filteredList);
   };
 

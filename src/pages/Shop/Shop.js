@@ -20,16 +20,62 @@ const Shops = () => {
   const [isExpanded3, setIsExpanded3] = useState(false);
   const [isExpanded4, setIsExpanded4] = useState(false);
   const [isExpanded5, setIsExpanded5] = useState(false);
+  const [inStock, setInStock] = useState(false);
 
-  // filter
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  // const [inStockFilter, setInStockFilter] = useState(false);
+
+  useEffect(() => {
+    // Your data fetching or initialization logic here
+    const initialProducts = Object.values(data.products).flat();
+    setProducts(initialProducts);
+    setFilteredProducts(initialProducts);
+  }, []);
+
+  useEffect(() => {
+    // Apply filtering based on the selected criteria
+    let filtered = products;
+
+    if (inStock) {
+      filtered = filtered.filter((product) => product.inStock);
+    }
+
+    setFilteredProducts(filtered);
+  }, [inStock]);
+
   const [products, setProducts] = useState([]);
   const [filteredListByColor, setFilteredListByColor] = useState([]);
   const [filteredListByType, setFilteredListByType] = useState([]);
   const [filteredProductType, setfilteredProductType] = useState([]);
 
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [productList1, setProductList1] = useState([]);
+
   const [color, setColor] = useState("");
   const [type, setType] = useState("");
   const [productType, setproductType] = useState("");
+
+  const filterProductsByPrice = (products, min, max) => {
+    return products.filter((product) => {
+      const price = parseFloat(product.priceItem);
+      return (
+        (!min || price >= parseFloat(min)) && (!max || price <= parseFloat(max))
+      );
+    });
+  };
+  useEffect(() => {
+    const list = Object.values(data.products).flat();
+    setProductList1(filterProductsByPrice(list, minPrice, maxPrice));
+  }, [minPrice, maxPrice]);
+
+  const handleMinPriceChange = (e) => {
+    setMinPrice(e.target.value);
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setMaxPrice(e.target.value);
+  };
 
   useEffect(() => {
     const selected = Object.values(data.products).flat();
@@ -51,7 +97,7 @@ const Shops = () => {
     const list = Object.values(data.products).flat();
     setfilteredProductType(
       list?.filter((item) => {
-        return item.products?.find((i) => i.productType === productType);
+        return item.productType === productType;
       })
     );
   }, [productType]);
@@ -66,7 +112,7 @@ const Shops = () => {
   }, [type]);
 
   const handleCheckboxColor = (e) => {
-    setType("");
+    setColor("");
     if (color === e.target.name) {
       setColor("");
     } else {
@@ -74,7 +120,7 @@ const Shops = () => {
     }
   };
   const handleCheckboxType = (e) => {
-    setColor("");
+    setType("");
     if (type === e.target.name) {
       setType("");
     } else {
@@ -82,8 +128,7 @@ const Shops = () => {
     }
   };
   const handleCheckboxProductType = (e) => {
-    setColor("");
-    if (type === e.target.name) {
+    if (productType === e.target.name) {
       setproductType("");
     } else {
       setproductType(e.target.name);
@@ -111,8 +156,12 @@ const Shops = () => {
   };
 
   let productList = products;
+
   if (type) productList = filteredListByType;
   if (color) productList = filteredListByColor;
+  if (productType) productList = filteredProductType;
+  if (minPrice || maxPrice) productList = productList1;
+  if (inStock) productList = filteredProductType;
 
   return (
     <div className="shop">
@@ -171,9 +220,8 @@ const Shops = () => {
                             <label class="acardion-checkbox">
                               <input
                                 type="checkbox"
-                                // onChange={handleInStockChange}
-                                name="In stock"
-                                checked={type === "In stock"}
+                                checked={inStock}
+                                onChange={(e) => setInStock(e.target.checked)}
                               />
                               <span>In stock</span>
                             </label>
@@ -217,9 +265,9 @@ const Shops = () => {
                             <input
                               className="field-input"
                               type="text"
-                              placeholder="0"
-                              // value={minPrice}
-                              // onChange={handleMinPriceChange}
+                              placeholder="Min Price"
+                              value={minPrice}
+                              onChange={handleMinPriceChange}
                             />
                           </div>
                           <div class="field">
@@ -227,9 +275,9 @@ const Shops = () => {
                             <input
                               className="field-input"
                               type="text"
-                              placeholder="646.00"
-                              // value={maxPrice}
-                              // onChange={handleMaxPriceChange}
+                              placeholder="Max Price"
+                              value={maxPrice}
+                              onChange={handleMaxPriceChange}
                             />
                           </div>
                         </div>
@@ -262,7 +310,7 @@ const Shops = () => {
                                 type="checkbox"
                                 onClick={handleCheckboxProductType}
                                 name="Headset"
-                                // checked={type === "XFX"}
+                                checked={type === "Headset"}
                               />
                               <span>Headset</span>
                             </label>
@@ -270,14 +318,24 @@ const Shops = () => {
                           </li>
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                onClick={handleCheckboxProductType}
+                                name="Keycaps"
+                                checked={type === "Keycaps"}
+                              />
                               <span>Keycaps</span>
                             </label>
                             <span class="filter-count">(1)</span>
                           </li>
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                onClick={handleCheckboxProductType}
+                                name="Remote"
+                                checked={type === "Remote"}
+                              />
                               <span>Remote</span>
                             </label>
                             <span class="filter-count">(1)</span>

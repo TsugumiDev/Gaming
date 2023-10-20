@@ -1,0 +1,205 @@
+.about-page {
+  /* Baner Section */
+  /* About Game Section */
+  /* Gaming Adventures */
+  /* About Our Services */
+}
+.about-page #banner-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 70px 0;
+  background: black;
+  color: white;
+  background-position: 50% 50%;
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 9.063rem;
+}
+.about-page #banner-section .container {
+  width: 80%;
+}
+.about-page #banner-section .container .section-content {
+  width: 51%;
+}
+.about-page #banner-section .container .section-content .back-btn {
+  margin-bottom: 26px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.about-page #banner-section .container .section-content .back-btn .icon-back {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 100%;
+  text-align: center;
+  padding: 4px 0;
+  margin-right: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+.about-page #banner-section .container .section-content .section-title {
+  margin-bottom: 12px;
+}
+.about-page #banner-section .container .section-content .section-title h2 {
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  font-family: Outfit, sans-serif;
+  font-size: 35px;
+  display: inline-block;
+}
+.about-page #banner-section .container .section-content .about-text {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.about-page #about-game {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0px;
+}
+.about-page #about-game .container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.about-page #about-game .container .section-title {
+  margin-bottom: 40px;
+}
+.about-page #about-game .container .section-title h2 {
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  font-size: 39px;
+  color: #838383;
+}
+.about-page #about-game .container .section-bottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+.about-page #about-game .container .section-bottom .bottom-element p {
+  font-family: Outfit, sans-serif;
+  color: #838383;
+  width: 570px;
+  font-size: 14px;
+}
+.about-page #gaming-adventures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 70px;
+}
+.about-page #gaming-adventures .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+.about-page #gaming-adventures .container .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.about-page #gaming-adventures .container .section-title h2 {
+  color: #838383;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: Outfit, sans-serif;
+}
+.about-page #gaming-adventures .container .section-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+.about-page #gaming-adventures .container .section-bottom .information {
+  padding: 0 20px;
+}
+.about-page #gaming-adventures .container .section-bottom .information .section-title {
+  text-align: start;
+  margin-bottom: 40px;
+}
+.about-page #gaming-adventures .container .section-bottom .information .section-title h3 {
+  font-family: Outfit, sans-serif;
+  color: #838383;
+  font-size: 24px;
+}
+.about-page #gaming-adventures .container .section-bottom .information p {
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  color: #838383;
+  margin-bottom: 15px;
+}
+.about-page #about-services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 70px;
+  width: 100%;
+}
+.about-page #about-services .container {
+  width: 80%;
+}
+.about-page #about-services .container .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+.about-page #about-services .container .section-title h2 {
+  font-family: Outfit, sans-serif;
+  font-size: 38px;
+  color: #838383;
+}
+.about-page #about-services .container .section-title p {
+  margin-top: 24px;
+  font-size: 14px;
+  width: 900px;
+  color: #838383;
+}
+.about-page #about-services .container .section-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-page #about-services .container .section-bottom .about-us-boxs {
+  margin: 0 15px;
+  padding: 25px 18px;
+  border: 1px solid #0098ff;
+  position: relative;
+}
+.about-page #about-services .container .section-bottom .about-us-boxs img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.about-page #about-services .container .section-bottom .about-us-boxs h3 {
+  font-family: Outfit, sans-serif;
+  font-size: 25px;
+  color: #838383;
+  margin-bottom: 15px;
+}
+.about-page #about-services .container .section-bottom .about-us-boxs p {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Outfit, sans-serif;
+  color: #838383;
+}/*# sourceMappingURL=About.css.map */

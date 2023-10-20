@@ -1,0 +1,71 @@
+.testimonials-element {
+  width: 505px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px solid #fff;
+  background: linear-gradient(148deg, rgba(1, 152, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 0 10px;
+  color: #fff;
+  align-items: center;
+}
+.testimonials-element figure {
+  max-width: 148px;
+  width: 100%;
+  position: relative;
+}
+.testimonials-element figure img {
+  width: 148px;
+}
+.testimonials-element .testimonials-content {
+  padding: 15px;
+  max-width: calc(100% - 148px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: black;
+}
+.testimonials-element .testimonials-content .testimonial-title {
+  font-family: Outfit, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.testimonials-element .testimonials-content p {
+  margin-bottom: 15px;
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+}
+.testimonials-element .testimonials-content .testimonials-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-pro-info {
+  display: flex;
+  align-items: center;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-pro-info .pro-img .client-img {
+  width: 35px;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-pro-info h6 {
+  font-family: Outfit, sans-serif;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-pro-info h6 .client {
+  font-weight: 400;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-star img {
+  margin-right: 10px;
+  max-width: 70px;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-star .star-count {
+  color: black;
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
+.testimonials-element .testimonials-content .testimonials-bottom .testi-star .star-count b {
+  color: #0098ff;
+}/*# sourceMappingURL=Testimonials.css.map */

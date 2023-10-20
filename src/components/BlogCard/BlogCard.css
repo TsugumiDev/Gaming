@@ -1,0 +1,84 @@
+.blog-item-card {
+  width: 300px;
+  padding: 0%;
+  border: none;
+  position: relative;
+  width: 300px;
+  height: auto;
+  margin-bottom: 50px;
+  transition: all ease-in-out 0.5s;
+  display: inline-block;
+}
+.blog-item-card .blog-card-image {
+  padding-top: 67%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  border-radius: 0 12px;
+  border: 1px solid #0098ff;
+}
+.blog-item-card .blog-card-image img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog-item-card .blog-card-image .blog-labl {
+  background: linear-gradient(90deg, #0098ff 0%, #7b35c8 100%);
+  padding: 2px 10px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.blog-item-card .blog-card-image .date-labl {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 13px;
+  right: 15px;
+}
+.blog-item-card .blog-product-content .product-title {
+  width: auto !important;
+  font-size: 22px;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: #fff;
+}
+.blog-item-card .blog-number {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.blog-item-card .blog-number span {
+  color: #838383;
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+}
+.blog-item-card .read-more-btn span {
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  padding: 12px 40px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  transition: all ease-in-out 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 0 20px;
+}/*# sourceMappingURL=BlogCard.css.map */

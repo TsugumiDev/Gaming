@@ -1,0 +1,68 @@
+.gaming-products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0px;
+  width: 100%;
+}
+.gaming-products .container {
+  width: 80%;
+}
+.gaming-products .container .section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.gaming-products .container .section-top .section-title-left h2 {
+  color: black;
+  width: 320px;
+  font-size: 38px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+}
+.gaming-products .container .section-top .section-title-center p {
+  color: #838383;
+  max-width: 440px;
+  font-size: 15px;
+}
+.gaming-products .container .section-top .section-title-right .btn {
+  background: transparent;
+  color: #838383;
+  border: 1px solid #838383;
+  transition: all ease-in-out 0.3s;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: 14px;
+  border-radius: 0 20px;
+  padding: 12px 40px;
+  outline: none;
+}
+.gaming-products .container .section-top .section-title-right .btn:hover {
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.gaming-products .container .section-top .section-title-right .btn .text {
+  margin-right: 10px;
+}
+.gaming-products .container .product-card .element .product-title {
+  color: black;
+}
+.gaming-products .container .product-card .element .product-info .top span {
+  color: black;
+}
+.gaming-products .container .product-card .element .product-info .bottom-content .price-addtocart .price-item {
+  color: black;
+}
+.gaming-products .swiper-pagination {
+  display: none;
+}/*# sourceMappingURL=GamingProducts.css.map */

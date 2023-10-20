@@ -111,13 +111,13 @@
   font-size: 20px;
 }
 .product-card .element .product-info .bottom-content .price-addtocart .price-item .currency-type {
+  left: 36px;
+  bottom: 12px;
   font-size: 10px;
   display: inline-block;
   position: absolute;
-  left: 60px;
-  bottom: 16px;
 }
-.product-card .element .product-info .bottom-content .price-addtocart .add-to-cart button {
+.product-card .element .product-info .bottom-content .price-addtocart .add-cart {
   color: #fff;
   background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
   padding: 12px 40px;
@@ -133,12 +133,38 @@
   justify-content: center;
   text-align: center;
 }
-.product-card .element .product-info .bottom-content .price-addtocart .add-to-cart button:hover {
+.product-card .element .product-info .bottom-content .price-addtocart .add-cart:hover {
+  background: transparent;
+  color: #838383;
+  border: 1px solid #838383;
+}
+.product-card .element .product-info .bottom-content .price-addtocart .added-btn {
+  opacity: 0.7;
+  cursor: not-allowed;
+  color: #fff;
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  padding: 12px 40px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  transition: all ease-in-out 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0 20px;
+  border: 1px solid transparent;
+  justify-content: center;
+  text-align: center;
+}
+.product-card .element .product-info .bottom-content .price-addtocart .added-btn:hover {
   background: transparent;
   color: #838383;
   border: 1px solid #838383;
 }
 .product-card .pro_btn {
+  margin: 0 auto;
+  width: 200px;
+  height: 30px;
   position: absolute;
   top: 50%;
   left: 0;

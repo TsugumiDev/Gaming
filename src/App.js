@@ -12,6 +12,8 @@ import { store, persistor } from "../src/store/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import Wrapper from "./components/Wrapper/Wrapper";
+import { persistStore } from "redux-persist";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
   const products = Object.keys(data.products);
@@ -45,7 +47,7 @@ function App() {
                 path="/basket"
                 element={
                   <Wrapper>
-                    <Basket item={data} />
+                    <Basket item={data} key={data.id} />
                   </Wrapper>
                 }
               />

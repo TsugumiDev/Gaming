@@ -1,0 +1,171 @@
+.modal-product .container {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.modal-product .container .left {
+  width: 416px;
+}
+.modal-product .container .left .common-heading .review-stars {
+  display: flex;
+  color: #fff;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.modal-product .container .left .common-heading .review-stars .stars {
+  display: flex;
+  align-items: center;
+}
+.modal-product .container .left .common-heading .review-stars .review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-product .container .left .common-heading .review-stars .review .review-icon {
+  font-size: 13px;
+  margin-right: 5px;
+}
+.modal-product .container .left .common-heading .info-title {
+  font-size: 38px;
+  font-family: Outfit, sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.modal-product .container .left .common-heading .pro-number {
+  display: flex;
+  gap: 15px;
+}
+.modal-product .container .left .common-heading .pro-number li {
+  color: #838383;
+}
+.modal-product .container .left .common-heading .info-description {
+  margin: 20px 0;
+  color: #838383;
+}
+.modal-product .container .left .product-select {
+  margin-bottom: 20px;
+}
+.modal-product .container .left .product-select .pro-labl {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+.modal-product .container .left .product-select .selected {
+  border: solid 1px #838383;
+  color: #838383;
+  cursor: pointer;
+  border-radius: 0 10px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  position: relative;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 10px 35px 10px 15px;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("/../public/images/dropdown.png") no-repeat;
+  background-size: 14px;
+  background-position: calc(100% - 15px) 50%;
+}
+.modal-product .container .left .product-content-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px;
+}
+.modal-product .container .left .product-content-bottom .price {
+  position: relative;
+  color: #fff;
+  flex-shrink: 0;
+  line-height: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+}
+.modal-product .container .left .product-content-bottom .price .number {
+  font-size: 30px;
+  display: inline-flex;
+}
+.modal-product .container .left .product-content-bottom .price .currency-type {
+  font-size: 13px;
+  bottom: 27px;
+  left: 90px;
+  position: absolute;
+}
+.modal-product .container .left .product-content-bottom .quantity-select {
+  display: flex;
+  width: 200px;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+}
+.modal-product .container .left .product-content-bottom .quantity-select .lbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #838383;
+}
+.modal-product .container .left .product-content-bottom .quantity-select .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(76, 62, 62, 0.15);
+  display: flex;
+  max-width: 100px;
+  border-color: #838383;
+  height: 30px;
+  width: 100%;
+  border-radius: 0 10px;
+}
+.modal-product .container .left .product-content-bottom .quantity-select .quantity .quantity-btn {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: #838383;
+  border: 0;
+  flex: 1;
+}
+.modal-product .container .left .product-content-bottom .quantity-select .quantity .count-number {
+  color: #838383;
+}
+.modal-product .container .left .card-btns {
+  display: flex;
+  gap: 15px;
+}
+.modal-product .container .left .card-btns .btn {
+  padding: 7px 30px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+  padding: 12px 40px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  transition: all ease-in-out 0.3s;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 0 20px;
+}
+.modal-product .container .right .imgage-product {
+  width: 300px;
+}/*# sourceMappingURL=ModalProduct.css.map */

@@ -25,7 +25,7 @@ const ProductCard = ({ item }) => {
 
   const [product, setProduct] = useState();
   const dispatch = useDispatch();
-  const basketProducts = useSelector((state) => state.basket.basketProducts);
+  const basketProducts = useSelector((state) => state?.basket?.basketProducts);
 
   const selectColorOrSize = () => {
     let obj = {
@@ -64,15 +64,15 @@ const ProductCard = ({ item }) => {
 
   const handleAddToBasket = (event) => {
     event.stopPropagation();
-    const findedItem = basketProducts?.find(
+    const findedItem = productCategories?.find(
       (item) => item?.products?.productName === data?.productName
     );
     if (findedItem == undefined) {
       dispatch(
-        addToBasketAction([...basketProducts, { item: data, count: 1 }])
+        addToBasketAction([...productCategories, { item: data, count: 1 }])
       );
     } else {
-      const filteredProducts = basketProducts?.filter(
+      const filteredProducts = productCategories?.filter(
         (item) => item?.products?.productName !== data?.productName
       );
       dispatch(
