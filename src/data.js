@@ -53,6 +53,7 @@ export const data = {
         type: "XFX",
         productType: "Headset",
         priceItem: "453.0",
+        inStock: true,
 
         colors: [
           {
@@ -93,6 +94,7 @@ export const data = {
         type: "Vulture",
         productType: "Remote",
         priceItem: "381.0",
+        inStock: true,
 
         colors: [
           {
@@ -128,6 +130,7 @@ export const data = {
         type: "Electrobot",
         productType: "Remote",
         priceItem: "556.0",
+        inStock: true,
 
         sizes: [
           {

@@ -60,7 +60,7 @@ const ProductPage = () => {
           <div className="center">
             <ul className="tab">
               {categories.map((item) => (
-                <li>
+                <li key={item.name}>
                   {item.icon}
                   <span>{item.name}</span>
                 </li>

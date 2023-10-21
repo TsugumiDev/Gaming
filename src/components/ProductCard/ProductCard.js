@@ -16,8 +16,10 @@ import Sheet from "@mui/joy/Sheet";
 import GamingProducts from "../GamingProducts/GamingProducts";
 import AboutProduct from "../AboutProduct/AboutProduct";
 import ModalProduct from "../ModalProduct/ModalProduct";
+import { ADD_TO_BASKET } from "../../store/actions/actionTypes";
 
 const ProductCard = ({ item }) => {
+  const basketProducts = useSelector((state) => state.basket.basketProducts);
   const navigate = useNavigate();
   const productCategories = Object.keys(data.products);
 
@@ -25,7 +27,6 @@ const ProductCard = ({ item }) => {
 
   const [product, setProduct] = useState();
   const dispatch = useDispatch();
-  const basketProducts = useSelector((state) => state?.basket?.basketProducts);
 
   const selectColorOrSize = () => {
     let obj = {
@@ -64,23 +65,21 @@ const ProductCard = ({ item }) => {
 
   const handleAddToBasket = (event) => {
     event.stopPropagation();
-    const findedItem = productCategories?.find(
-      (item) => item?.products?.productName === data?.productName
-    );
-    if (findedItem == undefined) {
-      dispatch(
-        addToBasketAction([...productCategories, { item: data, count: 1 }])
-      );
+
+    const foundProduct = basketProducts?.find((pr) => pr.id === item?.id);
+    if (foundProduct) {
+      const copy = basketProducts?.filter((it) => it?.id !== foundProduct?.id);
+      copy?.unshift({
+        ...foundProduct,
+        ...selectedObj,
+        count: foundProduct?.count + 1,
+      });
+
+      dispatch(addToBasketAction(copy));
     } else {
-      const filteredProducts = productCategories?.filter(
-        (item) => item?.products?.productName !== data?.productName
-      );
-      dispatch(
-        addToBasketAction([
-          ...filteredProducts,
-          { item: data, count: findedItem.count + 1 },
-        ])
-      );
+      const copy = basketProducts?.slice();
+      copy?.unshift({ ...item, ...selectedObj, count: 1 });
+      dispatch(addToBasketAction(copy));
     }
   };
 
