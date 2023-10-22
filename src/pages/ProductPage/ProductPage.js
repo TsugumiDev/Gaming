@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AboutProduct from "../../components/AboutProduct/AboutProduct";
 import "../ProductPage/ProductPage.scss";
-import ViewedProducts from "../../components/ViewedProducts/ViewedProducts";
 // icons
 import { BsSpeaker } from "react-icons/bs";
 import { IoGameControllerOutline } from "react-icons/io5";
@@ -16,10 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
+
 const ProductPage = () => {
   const { productName } = useParams();
   const [product, setProduct] = useState();
-  console.log(productName, product);
+  const [selectedCategory, setSelectedCategory] =
+    useState("Gaming peripherals");
 
   useEffect(() => {
     setProduct(
@@ -60,7 +61,10 @@ const ProductPage = () => {
           <div className="center">
             <ul className="tab">
               {categories.map((item) => (
-                <li key={item.name}>
+                <li
+                  key={item.name}
+                  onClick={() => setSelectedCategory(item.name)}
+                >
                   {item.icon}
                   <span>{item.name}</span>
                 </li>
@@ -69,7 +73,7 @@ const ProductPage = () => {
           </div>
           <div className="right">
             <img
-              src="/images/double.cpu.webp"
+              src={`/images/categories/${selectedCategory}.webp`}
               alt="element-img"
               className="element-img"
             />

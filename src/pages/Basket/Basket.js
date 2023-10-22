@@ -11,7 +11,7 @@ const Basket = () => {
     ?.map((pr) => {
       return pr?.count * pr?.pricesInUSD?.price;
     })
-    ?.reduce((a, b) => a + b);
+    ?.reduce((a, b) => a + b, 0);
 
   return (
     <div className="basket">
@@ -24,26 +24,30 @@ const Basket = () => {
           <h2 className="cart-text">Your cart</h2>
         </div>
         <div className="section-contenet">
-          <div className="left">
-            <div className="cart-items">
-              <table class="cart-table">
-                <thead>
-                  <tr>
-                    <th className="img">IMAGE</th>
-                    <th className="name">NAME</th>
-                    <th className="price">PRICE</th>
-                    <th className="quantiy">QUANTITY</th>
-                    <th className="total">TOTAL</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {basketProducts?.map((product) => (
-                    <BasketItem key={product?.id} product={product} />
-                  ))}
-                </tbody>
-              </table>
+          {basketProducts.length > 0 ? (
+            <div className="left">
+              <div className="cart-items">
+                <table class="cart-table">
+                  <thead>
+                    <tr>
+                      <th className="img">IMAGE</th>
+                      <th className="name">NAME</th>
+                      <th className="price">PRICE</th>
+                      <th className="quantiy">QUANTITY</th>
+                      <th className="total">TOTAL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {basketProducts?.map((product) => (
+                      <BasketItem key={product?.id} product={product} />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="empty-basket-message">Your cart</div>
+          )}
           <div className="right">
             <div className="right-top">
               <span className="order">Order special instructions</span>

@@ -53,13 +53,13 @@ export const data = {
         type: "XFX",
         productType: "Headset",
         priceItem: "453.0",
-        inStock: true,
+        inStock: false,
 
         colors: [
           {
             color: "black",
             pricesInUSD: {
-              price: 430.0,
+              price: 453.0,
               originalPrice: null,
             },
             image: "refurbished-xbox-series-x-1tb-console-1.webp",
@@ -93,7 +93,7 @@ export const data = {
         productName: "Rubber Keycaps",
         type: "Vulture",
         productType: "Remote",
-        priceItem: "381.0",
+        priceItem: "580.0",
         inStock: true,
 
         colors: [
@@ -129,8 +129,8 @@ export const data = {
         productName: "Electrobot Xtreme Gaming Series PC",
         type: "Electrobot",
         productType: "Remote",
-        priceItem: "556.0",
-        inStock: true,
+        priceItem: "468.0",
+        inStock: false,
 
         sizes: [
           {

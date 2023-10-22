@@ -4,10 +4,22 @@ import { BsPerson, BsCart2 } from "react-icons/bs";
 import { ImSphere } from "react-icons/im";
 import { CiSearch } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const basketProducts = useSelector((state) => state.basket.basketProducts);
+  const itemCount = basketProducts.reduce(
+    (total, product) => total + product.count,
+    0
+  );
+
+  const total = basketProducts
+    ?.map((pr) => {
+      return pr?.count * pr?.pricesInUSD?.price;
+    })
+    ?.reduce((a, b) => a + b, 0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -201,18 +213,16 @@ const Header = () => {
                   </select>
                 </form>
               </li>
-              <li
-                className="cart"
-                style={{ color: "red" }}
-                onClick={() => navigate("/basket")}
-              >
+              <li className="cart" onClick={() => navigate("/basket")}>
                 <span class="icon-label">
                   My Cart:
                   <b>
-                    9,470.00<span class="currency-type">USD</span>
+                    {total.toFixed(2)}
+                    <span class="currency-type">USD</span>
                   </b>
                 </span>
                 <BsCart2 className="basket" />
+                <span className="item-count">{itemCount} </span>
               </li>
             </ul>
           </div>

@@ -22,6 +22,37 @@ const BasketItem = ({ product }) => {
     dispatch(addToBasketAction(copy));
   };
 
+  const decreaseProductCount = () => {
+    if (foundProduct?.count > 0) {
+      const updatedCount = foundProduct.count - 1;
+
+      if (updatedCount === 0) {
+        const updatedBasketProducts = basketProducts?.filter(
+          (product) => product.id !== foundProduct.id
+        );
+        dispatch(addToBasketAction(updatedBasketProducts));
+      } else {
+        const updatedProduct = {
+          ...foundProduct,
+          count: updatedCount,
+        };
+
+        const updatedBasketProducts = basketProducts?.map((product) =>
+          product.id === foundProduct.id ? updatedProduct : product
+        );
+
+        dispatch(addToBasketAction(updatedBasketProducts));
+      }
+    }
+  };
+
+  const deleteProduct = () => {
+    const updatedBasketProducts = basketProducts?.filter(
+      (product) => product.id !== foundProduct.id
+    );
+    dispatch(addToBasketAction(updatedBasketProducts));
+  };
+
   return (
     <tr className="cart-item">
       <td className="cart-item-media">
@@ -49,7 +80,7 @@ const BasketItem = ({ product }) => {
             <AiOutlinePlus />
           </button>
           <span>{product?.count}</span>
-          <button onClick={() => null}>
+          <button onClick={decreaseProductCount}>
             <AiOutlineMinus />
           </button>
         </div>
@@ -57,10 +88,10 @@ const BasketItem = ({ product }) => {
       <td class="cart-item-totals">
         <div class="cart-item-price">
           <div class="price-end">
-            <span className="total-price">{total} </span>
+            <span className="total-price">{total}</span>
             <span class="currency-type">USD</span>
           </div>
-          <div className="remove-btn">
+          <div onClick={deleteProduct} className="remove-btn">
             <RiDeleteBin6Line className="remove-icon" />
           </div>
         </div>

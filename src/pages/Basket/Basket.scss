@@ -3,6 +3,9 @@ $second-color: #838383;
 $third-color: #0098ff;
 $fourth-color: #7b35c8;
 
+#header {
+  background-color: black;
+}
 .basket {
   // padding-top: 40px;
   // padding-bottom: 70px;
@@ -207,6 +210,13 @@ $fourth-color: #7b35c8;
             }
           }
         }
+      }
+      .empty-basket-message {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 20px;
+        font-family: Outfit, sans-serif;
+        color: #838383;
       }
       .right {
         .right-top {

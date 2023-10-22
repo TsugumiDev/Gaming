@@ -21,6 +21,7 @@ const Shops = () => {
   const [isExpanded4, setIsExpanded4] = useState(false);
   const [isExpanded5, setIsExpanded5] = useState(false);
   const [inStock, setInStock] = useState(false);
+  const [outOfStock, setOutOfStock] = useState(false);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   // const [inStockFilter, setInStockFilter] = useState(false);
@@ -34,22 +35,29 @@ const Shops = () => {
 
   useEffect(() => {
     // Apply filtering based on the selected criteria
-    let filtered = products;
 
-    if (inStock) {
-      filtered = filtered.filter((product) => product.inStock);
+    if (inStock && !outOfStock) {
+      const filtered = products.filter((product) => product.inStock);
+      setFilteredProducts(filtered);
     }
 
-    setFilteredProducts(filtered);
-  }, [inStock]);
+    if (outOfStock && !inStock) {
+      const filtered = products.filter((product) => !product.inStock);
+      setFilteredProducts(filtered);
+    }
+
+    if (inStock && outOfStock) {
+      setFilteredProducts(products);
+    }
+  }, [inStock, outOfStock]);
 
   const [products, setProducts] = useState([]);
   const [filteredListByColor, setFilteredListByColor] = useState([]);
   const [filteredListByType, setFilteredListByType] = useState([]);
   const [filteredProductType, setfilteredProductType] = useState([]);
 
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
   const [productList1, setProductList1] = useState([]);
 
   const [color, setColor] = useState("");
@@ -161,7 +169,7 @@ const Shops = () => {
   if (color) productList = filteredListByColor;
   if (productType) productList = filteredProductType;
   if (minPrice || maxPrice) productList = productList1;
-  if (inStock) productList = filteredProductType;
+  if (inStock || outOfStock) productList = filteredProducts;
 
   return (
     <div className="shop">
@@ -229,7 +237,13 @@ const Shops = () => {
                           </li>
                           <li>
                             <label class="acardion-checkbox">
-                              <input type="checkbox" />
+                              <input
+                                type="checkbox"
+                                checked={outOfStock}
+                                onChange={(e) =>
+                                  setOutOfStock(e.target.checked)
+                                }
+                              />
                               <span>Out of stock</span>
                             </label>
                             <span class="filter-count">(1)</span>
