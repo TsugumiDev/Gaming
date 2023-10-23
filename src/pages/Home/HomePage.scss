@@ -437,9 +437,11 @@ $fourth-color: #7b35c8;
           .mySwiper {
             width: 80vw;
             .swiper-wrapper {
+              width: 390px;
               .swiper-slide {
                 display: flex;
                 gap: 30px;
+                width: auto !important;
                 .product-card {
                   .element {
                     .product-info {
@@ -564,9 +566,6 @@ $fourth-color: #7b35c8;
               height: 39px;
               margin-bottom: 20px;
               cursor: pointer;
-              // background: linear-gradient(75deg, $third-color 0%, $fourth-color 100%);
-              // color: $first-color;
-              // border: 1px solid transparent;
               padding: 10px 33px;
               font-size: 12px;
               display: inline-flex;
@@ -581,6 +580,9 @@ $fourth-color: #7b35c8;
                 font-size: 15px;
                 margin-right: 10px;
               }
+            }
+            li.active {
+              background-color: red;
             }
           }
           .more-categories {
@@ -1055,6 +1057,253 @@ $fourth-color: #7b35c8;
     }
     .swiper-pagination {
       display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #header {
+    width: 390px;
+  }
+  .home-page {
+    #header {
+      width: 385px;
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+    #shopify {
+      .container {
+        .shopify-elements {
+          width: 100%;
+          .banner-tagline {
+            width: 341px;
+          }
+          .section-title {
+            .text {
+              font-size: 40px;
+              width: 300px;
+            }
+          }
+          .show-btns {
+            .btn-products {
+              padding: 11px 9px;
+            }
+          }
+        }
+      }
+    }
+    #products {
+      .product-circle {
+        display: none;
+      }
+      .container {
+        .product-top {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 10px;
+          h2 {
+            font-size: 27px;
+          }
+        }
+      }
+    }
+    #client-logo {
+      .container {
+        .swiper {
+          img {
+            width: 50px;
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            &::after {
+              --swiper-navigation-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    #gaming-categories {
+      .gaming-circle {
+        display: none;
+      }
+      .gaming-console {
+        display: none;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        .right {
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 300px !important;
+                .product-card {
+                  width: 234px;
+                  margin: 20px 0px;
+                  .element {
+                    .product-info {
+                      .bottom-content {
+                        .add-cart {
+                          padding: 7px 19px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #about-our-shop {
+      .container {
+        .about-title {
+          h2 {
+            font-size: 28px;
+          }
+        }
+        .about-elements {
+          display: flex;
+          flex-direction: column;
+          .about-us-box {
+            height: 168px;
+            width: 291px;
+          }
+        }
+      }
+    }
+    #subscribe-section {
+      .container {
+        display: flex;
+        flex-direction: column;
+        .subscribe-content {
+          width: 390px;
+          .section-title {
+            h2 {
+              font-size: 20px;
+            }
+            p {
+            }
+          }
+          .input-subscribe {
+            form {
+              width: 340px;
+            }
+          }
+        }
+        .subscribe-img {
+          img {
+            width: 360px;
+          }
+        }
+      }
+    }
+    #pro-gaming-products {
+      .container {
+        .section-top {
+          .section-title-center {
+            display: none;
+          }
+          .section-title-right {
+            display: none;
+          }
+        }
+        .section-bottom {
+          display: flex;
+          flex-direction: column;
+          .section-bottom-left {
+            img {
+              width: 300px;
+              margin-bottom: 20px;
+            }
+          }
+          .section-bottom-right {
+            img {
+              width: 300px;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+    #gaming-products-second {
+      .products-container {
+        .section-content {
+          display: flex;
+          flex-direction: column;
+          .section-bottom-left {
+            img {
+              width: 350px;
+              height: 250px;
+              margin: 20px 0px;
+            }
+          }
+          .section-bottom-right {
+            img {
+              width: 390px;
+            }
+          }
+        }
+      }
+    }
+    #gaming-blog {
+      .container {
+        .section-top {
+          .section-title-left {
+            font-size: 24px;
+          }
+          .section-title-center {
+            display: none;
+          }
+          .section-title-right {
+            display: none;
+          }
+        }
+        .blog-items {
+          width: 380px;
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 300px !important;
+              }
+            }
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            display: none;
+          }
+        }
+      }
+    }
+    #testimonials {
+      .container {
+        .section-top {
+          .section-title-right {
+            p {
+              display: none;
+            }
+          }
+        }
+        .testimonials-swiper {
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 460px !important;
+              }
+            }
+          }
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

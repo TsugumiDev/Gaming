@@ -91,3 +91,33 @@ $fourth-color: #7b35c8;
     display: none;
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .gaming-products {
+    .container {
+      .section-top {
+        .section-title-center {
+          display: none;
+        }
+        .section-title-right {
+          display: none;
+        }
+      }
+      .product-swiper {
+        .product-items {
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                width: 300px !important;
+              }
+            }
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

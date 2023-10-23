@@ -391,3 +391,61 @@ a {
     }
   }
 }
+
+@media only screen and (max-width: 420px) {
+  #header {
+    width: 375px;
+    position: fixed;
+    .header-top {
+      .container {
+        .navigation-bar {
+          .main-nav {
+            display: none;
+          }
+          .nav-right {
+            .currency {
+              display: none;
+            }
+            .cart {
+              .icon-label {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-bottom {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #header {
+    width: 768px;
+    position: fixed;
+    .header-top {
+      .container {
+        .navigation-bar {
+          .main-nav {
+            display: none;
+          }
+          .nav-right {
+            .currency {
+              display: none;
+            }
+            .cart {
+              .icon-label {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-bottom {
+      display: none;
+    }
+  }
+}

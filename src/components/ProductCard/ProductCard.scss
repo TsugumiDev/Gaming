@@ -200,3 +200,8 @@ $fourth-color: #7b35c8;
     }
   }
 }
+@media only screen and (max-width: 420px) {
+  .product-card {
+    margin-right: 140px;
+  }
+}
