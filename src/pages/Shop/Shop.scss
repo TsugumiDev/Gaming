@@ -348,6 +348,20 @@ $fourth-color: #7b35c8;
               display: flex;
               gap: 20px;
               flex-wrap: wrap;
+              .product-card {
+                .element {
+                  .product-title {
+                    color: black;
+                  }
+                  .product-info {
+                    .top {
+                      span {
+                        color: black;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

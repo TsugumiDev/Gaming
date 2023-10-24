@@ -47,6 +47,7 @@ $fourth-color: #7b35c8;
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
+      padding-left: 0px;
       li {
         color: #838383;
       }
@@ -194,8 +195,18 @@ $fourth-color: #7b35c8;
     padding: 5px 15px;
     gap: 10px;
 
-    .icon {
-      position: relative;
+    .icon-left {
+      position: absolute;
+      display: block;
+    }
+    .icon-right {
+      position: absolute;
+      display: block;
+      right: 29px;
+    }
+
+    .modal {
+      position: absolute;
       display: block;
     }
   }

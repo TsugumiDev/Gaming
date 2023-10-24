@@ -143,7 +143,7 @@ const ProductCard = ({ item }) => {
         </div>
       </div>
       <div className="pro_btn">
-        <span className="icon">
+        <span className="icon-left">
           <AiOutlineHeart />
         </span>
         <span className="modal">
@@ -202,7 +202,7 @@ const ProductCard = ({ item }) => {
             </Modal>
           </div>
         </span>
-        <span className="icon">
+        <span className="icon-right">
           <MdCompareArrows />
         </span>
       </div>
