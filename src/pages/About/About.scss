@@ -210,3 +210,80 @@
     }
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .about-page {
+    #banner-section {
+      .container {
+        .section-content {
+          .section-title {
+            h2 {
+              font-size: 32px;
+            }
+          }
+          .about-text {
+            width: 340px;
+          }
+        }
+      }
+    }
+    #about-game {
+      .container {
+        width: 90%;
+        .section-bottom {
+          display: block;
+          .bottom-element {
+            margin-bottom: 20px;
+            p {
+              width: 360px;
+            }
+          }
+        }
+      }
+    }
+    #gaming-adventures {
+      .container {
+        width: 100%;
+        .section-bottom {
+          display: block;
+          .information {
+            .section-title {
+              width: 360px;
+              h3 {
+                font-size: 18px;
+                width: 360px;
+              }
+            }
+            p {
+              width: 360px;
+            }
+          }
+          .image {
+            img {
+              width: 390px;
+            }
+          }
+        }
+      }
+    }
+    #about-services {
+      .container {
+        .section-title {
+          h2 {
+            font-size: 32px;
+          }
+          p {
+            width: 360px;
+          }
+        }
+        .section-bottom {
+          display: block;
+          .about-us-boxs {
+            margin-bottom: 20px;
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

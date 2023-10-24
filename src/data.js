@@ -53,7 +53,7 @@ export const data = {
         type: "XFX",
         productType: "Headset",
         priceItem: "453.0",
-        inStock: false,
+        inStock: true,
 
         colors: [
           {

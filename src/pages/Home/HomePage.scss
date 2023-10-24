@@ -238,6 +238,7 @@ $fourth-color: #7b35c8;
           }
           .label {
             font-size: 13px;
+            margin-bottom: 0px;
             a {
               color: #1c82f3;
             }
@@ -1076,10 +1077,11 @@ $fourth-color: #7b35c8;
     }
     #shopify {
       .container {
+        width: 100%;
         .shopify-elements {
           width: 100%;
           .banner-tagline {
-            width: 341px;
+            width: 384px;
           }
           .section-title {
             .text {
@@ -1143,7 +1145,7 @@ $fourth-color: #7b35c8;
               .swiper-slide {
                 width: 300px !important;
                 .product-card {
-                  width: 234px;
+                  width: 216px;
                   margin: 20px 0px;
                   .element {
                     .product-info {

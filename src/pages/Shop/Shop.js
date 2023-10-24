@@ -527,14 +527,6 @@ const Shops = () => {
             <div className="right">
               <div className="container">
                 <div className="products">
-                  {/* {Object.keys(data.products).map((category) => (
-                    <div key={category}>
-                      {data.products[category].map((product) => (
-                        <ProductCard key={product.id} item={product} />
-                      ))}
-                    </div>
-                  ))} */}
-
                   {productList.map((product) => (
                     <ProductCard key={product.id} item={product} />
                   ))}

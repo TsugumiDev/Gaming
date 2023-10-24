@@ -31,19 +31,19 @@ $fourth-color: #7b35c8;
       .acardion-checkbox {
         display: flex;
         align-items: center;
-        // input {
-        //   opacity: 1;
-        //   width: 20px;
-        //   height: 20px;
-        //   top: 0;
-        //   left: -1px;
-        //   background: none;
-        //   appearance: none;
-        //   padding: 0;
-        //   margin: 0 10px 0 0;
-        //   border-radius: 5px;
-        //   border: 1px solid #cccccc;
-        // }
+        input {
+          opacity: 1;
+          width: 20px;
+          height: 20px;
+          top: 0;
+          left: -1px;
+          background: none;
+          appearance: none;
+          padding: 0;
+          margin: 0 10px 0 0;
+          border-radius: 5px;
+          border: 1px solid #cccccc;
+        }
         span {
           font-size: 14px;
           font-family: Outfit, sans-serif;
@@ -60,293 +60,306 @@ $fourth-color: #7b35c8;
   }
 }
 .shop {
-  .section-content {
+  .container {
+    --bs-gutter-x: 0px;
     width: 100%;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .section-content {
+      width: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .container {
-      width: 85%;
-      padding: 70px 0;
-      color: white;
-      background-position: 50% 50%;
-      position: relative;
-      z-index: 1;
-      background-repeat: no-repeat;
-      background-size: cover;
-      .back-btn {
-        margin-bottom: 26px;
-        display: inline-flex;
-        align-items: center;
-        font-size: 13px;
-        font-family: Outfit, sans-serif;
-        font-weight: 500;
-        cursor: pointer;
-        .icon-back {
-          width: 26px;
-          height: 26px;
-          display: flex;
-          vertical-align: middle;
-          border: 1px solid;
-          border-radius: 100%;
-          text-align: center;
-          padding: 4px 0;
-          margin-right: 10px;
-          flex-shrink: 0;
+      .container {
+        width: 85%;
+        padding: 70px 0;
+        color: white;
+        background-position: 50% 50%;
+        position: relative;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .back-btn {
+          margin-bottom: 26px;
+          display: inline-flex;
           align-items: center;
-          justify-content: center;
-        }
-      }
-      .section-title {
-        margin-bottom: 12px;
-        h2 {
-          background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 600;
+          font-size: 13px;
           font-family: Outfit, sans-serif;
-          font-size: 35px;
-          display: inline-block;
+          font-weight: 500;
+          cursor: pointer;
+          .icon-back {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            vertical-align: middle;
+            border: 1px solid;
+            border-radius: 100%;
+            text-align: center;
+            padding: 4px 0;
+            margin-right: 10px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+          }
         }
-        .num {
-          background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 600;
-          font-family: Outfit, sans-serif;
-          font-size: 14px;
-          display: inline-block;
-          margin-left: 5px;
+        .section-title {
+          margin-top: 33px;
+          margin-bottom: 12px;
+          h2 {
+            background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-family: Outfit, sans-serif;
+            font-size: 35px;
+            display: inline-block;
+          }
+          .num {
+            background: linear-gradient(75deg, #0098ff 0%, #7b35c8 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-family: Outfit, sans-serif;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 5px;
+          }
         }
-      }
-      .about-text {
-        font-size: 13px;
-        font-family: Arial, Helvetica, sans-serif;
+        .about-text {
+          font-size: 13px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
       }
     }
-  }
-  .section-bottom {
-    margin: 70px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    .container {
-      width: 85%;
+    .section-bottom {
+      margin: 70px 0px;
       display: flex;
-      gap: 30px;
-      justify-content: space-between;
-      .left {
-        .filter-title {
-          margin-bottom: 20px;
-          font-size: 22px;
-          font-family: Outfit, sans-serif;
-        }
-        .filter-products {
-          width: 270px;
-          .accordion1 {
-            padding: 10px 0;
-            #panela-header {
-              height: 20px;
-              display: flex;
-              justify-content: space-between;
-              .title {
-                width: 220px;
-              }
-            }
-            .accordion-details {
-              .element {
-                .availability-details {
-                  @include accordion-style();
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      .container {
+        width: 85%;
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        .left {
+          .filter-title {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-family: Outfit, sans-serif;
+          }
+          .filter-products {
+            width: 270px;
+            .accordion1 {
+              padding: 10px 0;
+              #panela-header {
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                .title {
+                  width: 220px;
                 }
               }
-            }
-          }
-          .accordion2 {
-            padding: 10px 0;
-            #panela-header {
-              height: 20px;
-              display: flex;
-              justify-content: space-between;
-              .title {
-                width: 220px;
-              }
-            }
-            .accordion-details {
-              .element {
-                .price-detalis {
-                  .top {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    letter-spacing: 0;
-                    padding: 0 10px 15px 0;
-                    margin: 0 0 15px;
-
-                    .selected {
-                      font-size: 12px;
-                      font-family: Outfit, sans-serif;
-                      font-weight: 500;
-                    }
-                    .reset {
-                      font-size: 12px;
-                      font-family: Outfit, sans-serif;
-                      font-weight: 500;
-                    }
-                  }
-                  .filter-price {
-                    display: flex;
-                    color: ($second-color, 0.4);
-
-                    .field {
-                      padding: 0 5px;
-                      font-size: 13px;
-
-                      .field-label {
-                        margin: 0 0 5px;
-                        display: inline-block;
-                      }
-                      .field-input {
-                        padding: 10px;
-                        position: relative;
-                        border: 1px solid #cccccc;
-                        display: block;
-                        width: 100%;
-                        padding: 10px 20px;
-                        background: transparent;
-                        font-size: 13px;
-                        font-family: Outfit, sans-serif;
-                        line-height: 1;
-                        border-radius: 0 20px;
-                        color: $second-color;
-                      }
-                    }
+              .accordion-details {
+                .element {
+                  .availability-details {
+                    @include accordion-style();
                   }
                 }
               }
             }
-          }
-          .accordion3 {
-            padding: 10px 0;
-            #panela-header {
-              height: 20px;
-              display: flex;
-              justify-content: space-between;
-              .title {
-                width: 220px;
-              }
-            }
-            .accordion-details {
-              .element {
-                .product-type-detalis {
-                  @include accordion-style;
+            .accordion2 {
+              padding: 10px 0;
+              #panela-header {
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                .title {
+                  width: 220px;
                 }
               }
-            }
-          }
-          .accordion4 {
-            padding: 10px 0;
-            #panela-header {
-              height: 20px;
-              display: flex;
-              justify-content: space-between;
-              .title {
-                width: 220px;
-              }
-            }
-            .acardion-detalis {
-              .element {
-                .brand-detalis {
-                  @include accordion-style;
-                }
-              }
-            }
-          }
-          .accordion5 {
-            padding: 10px 0;
-            #panela-header {
-              height: 20px;
-              display: flex;
-              justify-content: space-between;
-              .title {
-                width: 220px;
-              }
-            }
-            .accordion-detalis {
-              .element {
-                .color-detalis {
-                  .top {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    letter-spacing: 0;
-                    padding: 0 10px 15px 0;
-                    margin: 0 0 15px;
-
-                    .selected {
-                      font-size: 13px;
-                      font-family: Outfit, sans-serif;
-                      font-weight: 500;
-                    }
-                    .reset {
-                      font-size: 13px;
-                      font-family: Outfit, sans-serif;
-                      font-weight: 500;
-                    }
-                  }
-                  .accordion-filter-list {
-                    margin-bottom: 8px;
-                    li {
+              .accordion-details {
+                .element {
+                  .price-detalis {
+                    .top {
                       display: flex;
                       justify-content: space-between;
                       align-items: center;
-                      .accordion-checkbox {
-                        display: flex;
-                        align-items: center;
-                        .input {
-                          opacity: 1;
-                          width: 20px;
-                          height: 20px;
-                          top: 0;
-                          left: -1px;
-                          background: none;
-                          appearance: none;
-                          padding: 0;
-                          margin: 0 10px 0 0;
-                          border-radius: 5px;
-                          border: 1px solid #cccccc;
-                        }
-                        span {
-                          margin-left: 5px;
-                          font-size: 14px;
-                          font-family: Outfit, sans-serif;
-                          font-weight: 600;
-                        }
+                      letter-spacing: 0;
+                      padding: 0 10px 15px 0;
+                      margin: 0 0 15px;
+
+                      .selected {
+                        font-size: 12px;
+                        font-family: Outfit, sans-serif;
+                        font-weight: 500;
                       }
-                      .filter-count {
-                        font-size: 14px;
+                      .reset {
+                        font-size: 12px;
                         font-family: Outfit, sans-serif;
                         font-weight: 500;
                       }
                     }
+                    .filter-price {
+                      display: flex;
+                      color: ($second-color, 0.4);
+
+                      .field {
+                        padding: 0 5px;
+                        font-size: 13px;
+
+                        .field-label {
+                          margin: 0 0 5px;
+                          display: inline-block;
+                        }
+                        .field-input {
+                          padding: 10px;
+                          position: relative;
+                          border: 1px solid #cccccc;
+                          display: block;
+                          width: 100%;
+                          padding: 10px 20px;
+                          background: transparent;
+                          font-size: 13px;
+                          font-family: Outfit, sans-serif;
+                          line-height: 1;
+                          border-radius: 0 20px;
+                          color: $second-color;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .accordion3 {
+              padding: 10px 0;
+              #panela-header {
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                .title {
+                  width: 220px;
+                }
+              }
+              .accordion-details {
+                .element {
+                  .product-type-detalis {
+                    @include accordion-style;
+                  }
+                }
+              }
+            }
+            .accordion4 {
+              padding: 10px 0;
+              #panela-header {
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                .title {
+                  width: 220px;
+                }
+              }
+              .acardion-detalis {
+                .element {
+                  .brand-detalis {
+                    @include accordion-style;
+                  }
+                }
+              }
+            }
+            .accordion5 {
+              padding: 10px 0;
+              #panela-header {
+                height: 20px;
+                display: flex;
+                justify-content: space-between;
+                .title {
+                  width: 220px;
+                }
+              }
+              .accordion-detalis {
+                .element {
+                  .color-detalis {
+                    .top {
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      letter-spacing: 0;
+                      padding: 0 10px 15px 0;
+                      margin: 0 0 15px;
+
+                      .selected {
+                        font-size: 13px;
+                        font-family: Outfit, sans-serif;
+                        font-weight: 500;
+                      }
+                      .reset {
+                        font-size: 13px;
+                        font-family: Outfit, sans-serif;
+                        font-weight: 500;
+                      }
+                    }
+                    .accordion-filter-list {
+                      margin-bottom: 8px;
+                      li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .accordion-checkbox {
+                          display: flex;
+                          align-items: center;
+                          .input {
+                            opacity: 1;
+                            width: 20px;
+                            height: 20px;
+                            top: 0;
+                            left: -1px;
+                            background: none;
+                            appearance: none;
+                            padding: 0;
+                            margin: 0 10px 0 0;
+                            border-radius: 5px;
+                            border: 1px solid #cccccc;
+                          }
+                          span {
+                            margin-left: 5px;
+                            font-size: 14px;
+                            font-family: Outfit, sans-serif;
+                            font-weight: 600;
+                          }
+                        }
+                        .filter-count {
+                          font-size: 14px;
+                          font-family: Outfit, sans-serif;
+                          font-weight: 500;
+                        }
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-      .right {
-        .container {
-          .products {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        .right {
+          .container {
+            .products {
+              display: flex;
+              gap: 20px;
+              flex-wrap: wrap;
+            }
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .shop {
+    .container {
+      max-width: 100%;
     }
   }
 }

@@ -3,10 +3,20 @@ import "../Header/Header.scss";
 import { BsPerson, BsCart2 } from "react-icons/bs";
 import { ImSphere } from "react-icons/im";
 import { CiSearch } from "react-icons/ci";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const basketProducts = useSelector((state) => state.basket.basketProducts);
@@ -223,6 +233,26 @@ const Header = () => {
                 </span>
                 <BsCart2 className="basket" />
                 <span className="item-count">{itemCount} </span>
+              </li>
+              <li className="burger-menu">
+                <div
+                  className={`menu-button ${isOpen ? "open" : ""}`}
+                  onClick={toggleMenu}
+                >
+                  {isOpen ? (
+                    <AiOutlineClose />
+                  ) : (
+                    <RxHamburgerMenu className="menu-i" />
+                  )}
+                </div>
+                {isOpen && (
+                  <div className="menu-items">
+                    <a href="/shop">Shop All</a>
+                    <a href="/about">About Us</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contact Us</a>
+                  </div>
+                )}
               </li>
             </ul>
           </div>

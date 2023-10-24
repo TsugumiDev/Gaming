@@ -83,7 +83,7 @@ $fourth-color: #7b35c8;
                   width: 80px;
                 }
                 .name {
-                  width: 160px;
+                  width: 153px;
                   padding-left: 33px;
                 }
                 .price {
@@ -123,6 +123,7 @@ $fourth-color: #7b35c8;
                   padding: 20px 10px;
                   display: table-cell;
                   text-align: left;
+                  width: 160px;
 
                   .cart-item__name {
                     color: $second-color;
@@ -307,6 +308,83 @@ $fourth-color: #7b35c8;
                 $third-color 0%,
                 $fourth-color 100%
               );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .basket {
+    .container {
+      width: 100%;
+
+      .section-top {
+        .cart-text {
+          font-size: 28px;
+          margin-top: 30px;
+        }
+      }
+      .section-contenet {
+        display: block;
+        .left {
+          .cart-items {
+            margin: 20px 0px;
+            .cart-table {
+              thead {
+                tr {
+                  .img,
+                  .name,
+                  .price,
+                  .quantiy,
+                  .total {
+                    font-size: 13px;
+                  }
+                  .price {
+                    display: none;
+                  }
+                  .quantiy {
+                    padding-left: 36px;
+                  }
+                  .total {
+                    padding-left: 20px;
+                  }
+                }
+              }
+              tbody {
+                .cart-item {
+                  .cart-item-media {
+                    img {
+                      width: 60px;
+                      height: 60px;
+                    }
+                  }
+                  .name {
+                    .product-option {
+                      display: none;
+                    }
+                  }
+                  .cart-price {
+                    display: none;
+                  }
+                  .cart-item-totals {
+                    padding: 0px;
+                    .cart-item-price {
+                      .price-end {
+                        .total-price {
+                          font-size: 15px;
+                        }
+                        .currency-type {
+                          font-size: 14px;
+                          margin-left: 5px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
