@@ -1256,7 +1256,9 @@ $fourth-color: #7b35c8;
     }
     #gaming-blog {
       .container {
+        width: 100%;
         .section-top {
+          width: 90% !important;
           .section-title-left {
             font-size: 24px;
           }
@@ -1268,6 +1270,7 @@ $fourth-color: #7b35c8;
           }
         }
         .blog-items {
+          width: 90% !important;
           width: 380px;
           .swiper {
             .swiper-wrapper {

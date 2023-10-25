@@ -18,6 +18,7 @@ const Header = () => {
   };
 
   const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const basketProducts = useSelector((state) => state.basket.basketProducts);
   const itemCount = basketProducts.reduce(
@@ -68,7 +69,7 @@ const Header = () => {
 
                           <li>Game Console</li>
 
-                          <li>Game Remote</li>
+                          <li onClick={() => navigate("/shop")}>Game Shop</li>
 
                           <li>Gaming Cards</li>
 
@@ -136,7 +137,11 @@ const Header = () => {
                 <div class="menu-dropdown pages-elements">
                   <ul className="list-elements">
                     <li class="list-element">
-                      <a className="element-link" href="/pages/about-us">
+                      <a
+                        className="element-link"
+                        href="#"
+                        onClick={() => navigate("/about")}
+                      >
                         About Us
                       </a>
                     </li>
